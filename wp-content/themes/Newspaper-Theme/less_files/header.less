@@ -1,0 +1,566 @@
+/*  ----------------------------------------------------------------------------
+    header background
+*/
+.td-full-layout .td-header-bg {
+  background-color: #ffffff;
+}
+
+.td-boxed-layout .td-logo-rec-wrap {
+  background-color: #ffffff;
+}
+
+/*  ----------------------------------------------------------------------------
+    header-style-3
+*/
+.header-content-rec {
+  background-color: white;
+}
+
+.header-style-3 {
+  .td-full-logo {
+    background-color: white;
+  }
+
+  .td-grid-wrap {
+    padding-top: 0px;
+  }
+
+  .td_rec {
+    padding: 12px 0 0 0;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      padding: 0px;
+    }
+  }
+
+  .container-fluid {
+    text-align: center;
+  }
+
+  .td-logo img {
+    padding-top: 12px;
+
+    @media (max-width: 767px) {
+      position: absolute;
+      right: 8px;
+      top: -3px;
+      z-index: 3;
+      padding-top: 0px;
+      width: 180px;
+    }
+  }
+
+  .td_mod_wrap {
+    /* responsive phone */
+    @media (max-width: 767px) {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    text logo
+*/
+.header-logo-wrap {
+
+  margin-top: 20px;
+
+  .td-logo-wrap-align {
+    display: block;
+    height: 100px;
+    position: relative;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      height: auto;
+    }
+  }
+
+  a.td-logo-wrap {
+    display: block;
+    left: 16px;
+    padding-top: 15px;
+    position: relative;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      left: 49px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      padding-bottom: 10px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      padding-top: 0px;
+      left: 0;
+    }
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  .td-logo-text {
+    display: block;
+    font-family: @font5;
+    font-size: 40px;
+    color: #444444;
+    line-height: 45px;
+    margin-right: 10px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      margin-right: 30px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      font-size: 222%;
+      line-height: 93%;
+      margin-right: 0px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      font-size: 222%;
+      padding-top: 5px;
+    }
+  }
+
+  .td-tagline-text {
+    display: block;
+    font-family: @font3;
+    font-size: 14px;
+    color: #444444;
+    line-height: 21px;
+    margin-right: 10px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      margin-right: 30px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      font-size: 85%;
+      margin-right: 0px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+
+
+
+
+
+  /*  ----------------------------------------------------------------------------
+      image logo
+  */
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: none;
+  }
+
+  img {
+    margin-left: 15px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      margin-left: 48px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      width:250px;
+      margin-left: 11px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+		//width: 170px;
+        display: none;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    image logo phone version
+*/
+
+.mobile-logo-wrap {
+  img {
+    display: none;
+    /* responsive phone */
+    @media (max-width: 767px) {
+      width: 170px;
+      position: absolute;
+      right: 10px;
+      top:-3px;
+      display: block;
+    }
+  }
+
+  img.td-retina-version {
+    top:-4px;
+  }
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    header style 8
+*/
+.td-header-style-8-wrapper.td-menu-placeholder {
+  height: auto;
+
+  .td-menu-background {
+    @media (max-width: 767px) {
+      height: 48px;
+    }
+  }
+
+  .td-menu-background:after {
+    bottom: auto;
+  }
+}
+
+.td-header-style-8 {
+  position: relative;
+  height: 76px;
+
+  .td-head-style8-logo-mobil {
+    display: none;
+  }
+
+  &.td-affix {
+    height: 50px;
+
+    .td-style-8-content-wrapper {
+      min-height: 52px;
+    }
+
+    .td-style-8-logo-wrapper {
+      .td-head-style8-logo-mobil {
+        display: block;
+        float: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .td-style-8-logo-wrapper {
+        .td-head-style8-logo-mobil {
+          display: block;
+          float: right;
+        }
+      }
+    }
+
+    .td-style-8-logo-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .td-head-style8-logo-desktop {
+      display: none;
+    }
+
+    .td-li-wrapper-menu {
+      .sf-menu > li > a {
+        height: 50px;
+        line-height: 52px;
+
+
+        .menu_icon {
+          top: 16px;
+        }
+
+        .sf-sub-indicator {
+          top: 26px;
+        }
+      }
+
+      .sf-menu li:hover ul, .sf-menu li.sfHover ul {
+        top: 52px;
+      }
+    }
+
+    #td-top-search {
+      top: 1px;
+
+      .dropdown-menu {
+        top: 47px;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1018px) {
+      #td-top-search {
+        top: -2px;
+
+        .dropdown-menu {
+          top: 50px;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      #td-top-search {
+        top: -3px;
+
+        .dropdown-menu {
+          top: 49px;
+        }
+      }
+    }
+
+  }
+
+  .td-style-8-content-wrapper {
+    width: 966px;
+    display: table;
+    min-height: 52px;
+    margin: 0 auto;
+    background: transparent;
+
+
+    /* responsive desktop */
+    @media (min-width: 1200px) {
+      width: 1074px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      width: 726px;
+
+      .td-head-style8-logo-mobil {
+        display: inline-block;
+      }
+
+      .td-head-style8-logo-desktop {
+        display: none;
+      }
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      width: 100%;
+
+      .td-head-style8-logo-mobil {
+        display: block;
+      }
+
+      .td-head-style8-logo-desktop {
+        display: none;
+      }
+    }
+  }
+
+  .td-style-8-logo-wrapper {
+    display: table-cell;
+    //vertical-align: middle;
+    //background: #ccc;
+
+    @media (min-width: 768px) and (max-width: 1018px) {
+      vertical-align: middle;
+    }
+
+    .td-logo {
+      img {
+        height: 76px;
+        vertical-align: middle;
+      }
+    }
+
+    .td-head-style8-logo-mobil {
+      float: right;
+
+      @media (min-width: 768px) and (max-width: 1018px) {
+        float: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      a img {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+      }
+    }
+  }
+
+
+  .td-style-8-menu-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+      width: 0px;
+    }
+
+    &> div {
+      display: inline-block;
+      //background: #fed900;
+    }
+
+    .menu-td-header-container {
+      a {
+        font-size: 14px;
+
+        /* responsive desktop */
+        @media (min-width: 1200px) {
+          font-size: 16px;
+        }
+
+        /* responsive portrait tablet */
+        @media (min-width: 768px) and (max-width: 1018px) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  //nedded, if not here the menu will be showed in reversed order
+  .td-li-wrapper-menu {
+    float: right;
+
+
+    .sf-menu > li > a {
+      height: 76px;
+      line-height: 80px;
+      color: #202020;
+
+      .menu_icon {
+        top: 31px;
+      }
+
+      .sf-sub-indicator {
+        top: 40px;
+      }
+    }
+
+    .sf-menu li:hover ul, .sf-menu li.sfHover ul {
+      top: 80px;
+    }
+
+    //getting the second level of .sub-mneu
+    ul.sf-menu li.menu-item-has-children .sub-menu .sub-menu {
+      top: 0px;
+    }
+
+    @media (max-width: 767px) {
+      padding-right: 0px;
+      margin-right: 8px;
+
+      .dropdown-menu {
+        top: 46px;
+      }
+    }
+  }
+
+  @-moz-document url-prefix() {
+    .td-li-wrapper-menu {
+      padding-right: 30px;
+    }
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .td-li-wrapper-menu {
+      padding-right: 30px;
+    }
+  }
+
+  #td-top-search {
+    position: relative;
+    display: inline-block;
+    left: -8px;
+    right: auto;
+    top: 14px;
+
+    @media (max-width: 767px) {
+      position: absolute !important;
+      top: -3px;
+      left: 40px;
+    }
+
+    .dropdown-menu {
+      top: 60px;
+      left: -294px;
+
+      @media (max-width: 767px) {
+        top: 48px;
+        left: -55px;
+      }
+    }
+  }
+
+  @-moz-document url-prefix() {
+    #td-top-search {
+      .dropdown-menu {
+        left: -304px;
+
+        @media (max-width: 767px) {
+          left: -55px;
+        }
+      }
+    }
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    #td-top-search {
+      .dropdown-menu {
+        left: -304px;
+
+        @media (max-width: 767px) {
+          left: -55px;
+        }
+      }
+    }
+  }
+
+  .td-menu-wrap {
+    height: auto;
+  }
+}
+
+//header style 8 with background
+.td-boxed-layout {
+  .td-header-style-8 {
+    .td-menu-wrap {
+      height: 76px;
+
+      @media (max-width: 767px) {
+        height: 48px;
+      }
+    }
+
+    &.td-affix {
+      .td-menu-wrap {
+        height: 50px;
+
+        @media (max-width: 767px) {
+          height: 48px;
+        }
+      }
+    }
+  }
+}
+
+//body-td-affix class on body for header style 8 -> when scrolling down the window jumps 76px up when the menu is changing from header style 8 default to header style 8 affix
+.body-td-affix .td-header-style-8-wrapper + .container.td-page-wrap {
+  margin-top: 80px;
+
+  @media (max-width: 767px) {
+    margin-top: 52px;
+  }
+}

@@ -1,0 +1,496 @@
+@import "variables.less";
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    Editor style + article style less
+*/
+
+
+/*  ----------------------------------------------------------------------------
+    tinymce custom tagdiv styles
+*/
+.td-paragraph-padding-0 {
+  display:inline-block;
+  padding-left: 0%;
+  padding-right: 11%;
+}
+
+.td-paragraph-padding-1 {
+  display:inline-block;
+  padding-left: 11%;
+  padding-right: 11%;
+}
+
+
+.td-paragraph-padding-2 {
+  display:inline-block;
+  padding-left: 17.5%;
+  padding-right: 17.5%;
+}
+
+
+.td-paragraph-padding-3 {
+  display:inline-block;
+  padding-left: 11%;
+  padding-right: 17.5%;
+}
+
+
+.td-paragraph-padding-4 {
+  display:inline-block;
+  padding-left: 11%;
+  padding-right: 0%;
+}
+
+
+//smaller spaces on two columns
+.td-post-content.span8,
+.column_container.span8  {
+  .td-paragraph-padding-0 {
+    padding-right: 5%;
+  }
+
+  .td-paragraph-padding-1 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .td-paragraph-padding-2 {
+    padding-left: 8.5%;
+    padding-right: 8.5%;
+  }
+
+  .td-paragraph-padding-3 {
+    display:inline-block;
+    padding-left: 5%;
+    padding-right: 8.5%;
+  }
+
+  .td-paragraph-padding-4 {
+    padding-left: 5%;
+  }
+
+}
+
+
+
+/* responsive phone */
+@media (max-width: 500px) {
+  .td-paragraph-padding-0,
+  .td-paragraph-padding-1,
+  .td-paragraph-padding-2,
+  .td-paragraph-padding-3,
+  .td-paragraph-padding-4 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+
+    display: block; //fix for mobile
+  }
+}
+
+
+
+.td-quote-classic {
+  p {
+    font-family: 'Vollkorn', serif;//!important;
+    color:#4b4b4b;
+    font-size:41px;
+    line-height: 48px;
+
+    font-weight: normal;//!important;
+  }
+}
+
+
+.td-post-content.span8 {
+  .td-quote-classic {
+    margin-top:40px;
+    margin-bottom:40px;
+
+    p {
+      font-size:39px;
+      line-height: 47px;
+    }
+  }
+}
+
+
+.td-quote-classic {
+  .td-quote-author p {
+    font-size:22px;
+    line-height: 22px;
+    color:#CAC4BF;
+
+    position: relative;
+    top:-14px;
+    margin-bottom: 0px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    posts .h-s
+*/
+
+.td-post-text-content {
+  font-size:15px;
+  color:#262626;
+  line-height: 23px;
+}
+
+
+.td-post-text-content h1,
+.td-post-text-content h2,
+.td-post-text-content h3,
+.td-post-text-content h4,
+.td-post-text-content h5,
+.td-post-text-content h6 {
+  font-family: 'PT Sans', sans-serif;
+  color:#222222;
+  font-weight: normal;
+  margin:25px 0px 27px 0px;
+
+}
+
+.td-post-text-content h1 {
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: bold;
+}
+
+.td-post-text-content h2 {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+}
+
+
+.td-post-text-content h3 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: bold;
+}
+
+
+.td-post-text-content h4 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: bold;
+}
+
+.td-post-text-content h5 {
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.td-post-text-content h6 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+
+
+
+.td-post-text-content img {
+  display: block;
+}
+
+
+
+
+
+a:active, a:focus { /* IE remove focus */
+  outline: none;
+  //ie-dummy: expression(this.hideFocus=true);
+}
+
+
+a {  /* normal link */
+  color:@td_theme_color;
+  text-decoration: none !important;
+  //.transition(color @td_transition_time);
+}
+
+a:hover {
+  text-decoration: underline !important;
+  color:darken(@td_theme_color, 10%);
+  //.transition(color @td_transition_time);
+}
+
+
+ins {
+  background: white;
+  text-decoration: none;
+}
+
+
+code {
+  position: relative;
+  top:-1px;
+  border: none;
+}
+
+
+
+pre {
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+
+  margin-top: 24px;
+}
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    quote
+*/
+blockquote {
+  padding: 0px;
+
+  position: relative;
+  border-left: none;
+  margin: 42px 0 42px 0;
+
+}
+
+blockquote p {
+  font-family: @font5;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  color: @td_theme_color;
+}
+
+blockquote p:first-child {
+  padding-top: 0px;
+}
+
+blockquote {
+
+  small, cite {
+    margin-top: 5px;
+    display: block;
+    font-size:14px !important; /* ovveride bootstrap */
+    font-style: italic;
+    font-weight: normal;
+    color:#444444;
+  }
+
+}
+
+cite {
+  font-size:14px !important; /* ovveride bootstrap */
+  font-style: italic;
+  font-weight: normal;
+  color:#444444;
+
+  a {
+    color:#444444;
+    &:hover {
+      color:#444444 !important;
+    }
+  }
+}
+
+blockquote.pull-right {
+  padding-left: 20px;
+  border-right: none;
+}
+
+blockquote.pull-right:after {
+  border-right: 2px solid #FB5502;
+  width:40px;
+  right: -40px;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    text and Images align
+*/
+.post,
+.page,
+.mce-content-body
+
+{
+  .alignnone {
+
+  }
+
+  .aligncenter {
+    text-align: center;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+  }
+
+
+
+  /*  ----------------------------------------------------------------------------
+      align left
+  */
+  .alignleft {
+    float:left;
+    margin-right: 23px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      max-width: 220px !important;
+    }
+
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      max-width: 220px !important;
+    }
+
+    /* responsive phone CUSTOM - align the image on center */
+    @media (max-width: 500px) {
+      float:none;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100% !important;
+      width: 100% !important;
+
+      img {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      figcaption {
+        text-align: center;
+      }
+    }
+  }
+
+
+  /*  ----------------------------------------------------------------------------
+      align right
+  */
+  .alignright {
+    float:right;
+    margin-left: 23px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+
+
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      max-width: 220px !important;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      max-width: 220px !important;
+    }
+
+    /* responsive phone CUSTOM */
+    @media (max-width: 500px) {
+      float:none;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100% !important;
+
+      img {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      figcaption {
+        text-align: center;
+      }
+
+    }
+  }
+
+  figure.alignright,
+  figure.alignleft,
+  figure.aligncenter {
+    margin-bottom: 0px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+     caption
+*/
+
+.wp-caption-text {
+  text-align: left;
+  margin: 0px !important;
+
+  padding: 5px 0px 23px 0px;
+
+  font-family: 'Open Sans', arial, sans-serif !important;
+  font-size:12px;
+  font-style: italic;
+  font-weight: normal;
+  color:#444444;
+  line-height: 20px;
+}
+
+
+.wp-caption {
+  text-align: center;
+  max-width: 100% !important;
+
+}
+
+
+.alignnone img,
+.aligncenter img
+{
+  width: 100%;
+}
+
+
+.wp-caption img {
+  max-width: 100% !important;
+}
+
+
+
+.mce-content-body {
+  img {
+    height: auto;
+    max-width: 100% !important;
+  }
+}
+
+/* max width */
+html .mceContentBody {
+  max-width:700px;
+  //max-width: 1074px ;
+
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+html .mceContentBody-max-width {
+  max-width: 1074px;
+}

@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'newspaper';
+  src: url('@{td_css_path}images/icons/newspaper.eot?4');
+  src: url('@{td_css_path}images/icons/newspaper.eot?4#iefix') format('embedded-opentype'),
+  url('@{td_css_path}images/icons/newspaper.woff?4') format('woff'),
+  url('@{td_css_path}images/icons/newspaper.ttf?4') format('truetype'),
+  url('@{td_css_path}images/icons/newspaper.svg?4#newspaper') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'newspaper';
+    src: url('../font/newspaper.svg?#newspaper') format('svg');
+  }
+}
+*/
+
+[class^="td-icon-"]:before, [class*=" td-icon-"]:before {
+  font-family: "newspaper";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  //width: 1em;
+  //margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 16px;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  //margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.td-icon-font {
+  display: block;
+}
+
+.td-icon-menu-left:before { content: '\e807'; }
+.td-icon-menu-right:before { content: '\e808'; }
+.td-icon-left:before { content: '\e802'; }
+.td-icon-right:before { content: '\e803'; }

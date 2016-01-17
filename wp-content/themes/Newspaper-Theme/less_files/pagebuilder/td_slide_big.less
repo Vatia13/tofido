@@ -1,0 +1,361 @@
+/*  ----------------------------------------------------------------------------
+    slides titles
+*/
+
+.td-sbig-title-wrap {
+  position: absolute;
+  bottom: 21px;
+  left: 0px;
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      bottom: 0px;
+  }
+
+  /* separator for title */
+  .td-sbig-sep {
+    display: block !important;
+    clear:left;
+  }
+
+
+  /* slide title line (one line only) */
+  .td-sbig-title {
+    background-color: @td_theme_color;
+    background-color: fade(@td_theme_color, 70%);
+    display: inline-block;
+    float:left;
+    padding: 9px 9px;
+    color: #FFFFFF;
+
+    &:hover {
+      color: #FFFFFF;
+    }
+
+    //line-height: 50px;
+  }
+
+
+  a {
+    font-family: @font4;// !important
+    font-size: 26px;//!important
+    color:white ;//!important
+    //text-transform: uppercase;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+        font-size:18px !important;
+        line-height: 15px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      font-size: 17px !important;
+      line-height: 12px
+    }
+
+    &:hover span{
+      text-decoration: underline !important;
+    }
+  }
+
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    main item
+*/
+
+/* main item from slide */
+.td-slide-item-main {
+  background-color: white;
+  width: 670px;
+  height: 433px;
+  border-right: 3px solid white;
+  position: relative;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    width: 745px;
+    height: 483px;
+  }
+
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    width: 493px;
+    height: 341px;
+  }
+}
+
+
+
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    secondary items
+*/
+
+/* secondary items wrap */
+.td-slide-sec-items-wrap {
+  float: right;
+}
+
+/* secondary items */
+.td-slide-item-sec {
+  background-color: white;
+  width: 293px;
+  height: 143px;
+  position: relative;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    width: 326px;
+    height: 159px;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+      width:230px;
+      height: 100px;
+  }
+
+
+
+  //small slide title
+  a {
+    font-size: 16px;//!important
+    color: white;
+  }
+
+  .td-sbig-title-wrap {
+    /* responsive phone */
+    @media (max-width: 767px) {
+        display: none;
+    }
+    bottom: 0px;
+    display: inline-block;
+    background-color: @td_theme_color;
+    background-color: fade(@td_theme_color, 70%);
+    padding: 5px 5px 3px 5px;
+
+    a:hover {
+      color: #FFFFFF;
+    }
+  }
+
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    small items - each of them
+*/
+
+/* top item */
+.td-slide-item-sec-1 {
+  border-bottom: 3px solid white;
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    height: 112px;
+    top:-7px;
+  }
+
+
+}
+
+/* mid item */
+.td-slide-item-sec-2 {
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    top:-7px;
+    height: 105px;
+  }
+}
+
+/* bottom item */
+.td-slide-item-sec-3 {
+  border-top: 3px solid white;
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    top:-7px;
+  }
+
+  .td-sbig-title-wrap {
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+        bottom: -4px;
+    }
+  }
+
+}
+
+
+/*  ----------------------------------------------------------------------------
+    wrap
+*/
+
+
+.td_block_slide_big .iosSlider-col-3 {
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    height: 320px !important;
+  }
+
+}
+
+
+
+.td-desktop-post{
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.td-mobile-post {
+  display: none;
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: block;
+  }
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    mobile slide
+*/
+.td-mobile-post {
+  .td-sbig-title-wrap {
+
+    a {
+        background-color: @td_theme_color;
+        background-color: fade(@td_theme_color, 70%);
+        padding: 3px 5px 3px 5px;
+        font-size: 15px !important;
+      }
+  }
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    shadow - when the slide is used with a background
+*/
+
+.td-full-layout .td-big-slide-background,
+.td-boxed-layout .td-big-slide-background .container
+{
+  position: relative;
+
+  .iosSlider {
+    .box-shadow(0.5px 0.866px 5px 0px rgba( 0, 0, 0, 0.5 ));
+  }
+
+  &:after {
+    position:absolute;
+    bottom:-14px;
+    left:0px;
+
+    display:block;
+    content:'';
+    height:28px;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: url('@{td_css_path}images/header/bg-shadow.png') repeat-x transparent;
+  }
+
+  &:before {
+    position:absolute;
+    top:0px;
+    z-index: 0;
+    left:0px;
+
+    display:block;
+    content:'';
+    height:13px;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: black;
+    background: url('@{td_css_path}images/header/bg-shadow-top.png') repeat-x transparent;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    slider with background or just template 4 parallax
+*/
+
+
+
+
+
+//this is the wrapper
+.td-big-slide-background {
+  height: 532px;
+  overflow: hidden;
+  width: 100%;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    height: 582px;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+      height:418px;
+  }
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      height: auto;
+  }
+}
+
+
+// fix when boxed version
+.td-boxed-layout {
+
+  .td-backstretch {
+    top:-25px !important;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      top:-30px !important;
+    }
+
+  }
+
+
+  .td-big-slide-background {
+    margin-left: auto;
+    margin-right: auto;
+    width: 996px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      width: 1170px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      width: 748px;
+    }
+  }
+}

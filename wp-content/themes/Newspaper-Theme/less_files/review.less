@@ -1,0 +1,125 @@
+.mx-review-header-text {
+  font-family: @font5;
+  font-size:21px;
+  font-weight: normal;
+  color:@td_black;
+}
+
+
+.td-review {
+  width: 100%;
+  margin-top: @baseLineHeight * 2 - 6;
+}
+
+.td-review-header td {
+  //background-color: #ececec;
+  //border: 1px solid #dbdbdb;
+  padding: 15px 15px 15px 19px;
+  .mx-review-header-text();
+  background: @td_background_gray;
+}
+
+
+.td-review-summary h5 {
+  .mx-review-header-text();
+  margin: 0 0 8px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    footer
+*/
+.td-review {
+  margin-bottom: 42px;
+}
+
+.td-review-summary {
+  padding: 15px 15px 14px 19px;
+  border-right: 1px solid #dbdbdb;
+
+  background: @td_background_gray;
+}
+
+.td-review-score {
+  background-color: #f7f7f7;
+  padding: 15px;
+  width: 100px;
+
+
+  font-family:@font4;
+  font-size:52px;
+  text-align: center;
+
+  background: @td_background_gray;
+}
+
+.td_review_with_bars td {
+  height: 28px;
+}
+
+/*  ----------------------------------------------------------------------------
+    stars
+*/
+.td-review-stars {
+  width: 100px;
+  text-align: center;
+  line-height: 11px;
+}
+
+.td-review-row-stars {
+  td {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #eae9e8;
+	padding: 12px 19px 12px 19px;
+  }
+
+  .td-review-desc {
+    font-family: @font3;
+    font-size:15px;
+  }
+}
+
+.td-review-final-score {
+	padding: 20px 0;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    review bars
+*/
+
+.td-rating-bar-wrap {
+  height: 20px;
+  //background: @td_header_background;
+  background: @td_background_gray;
+  margin-bottom: 1px;
+
+  div {
+    height: 20px;
+    background: @td_header_background;
+  }
+}
+
+.td-review-row-bars {
+  .td-review-desc {
+    font-family: @font3;
+    font-size:14px;
+    //font-weight: 600;
+    color:@td_black;
+	padding-top: 8px;
+  }
+}
+
+.td-review-row-bars td {
+  padding: 0px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    percent
+*/
+
+.td-review-percent-sign {
+  font-size:30px;
+}

@@ -1,0 +1,128 @@
+
+
+
+.td-full-layout .td-footer-wrap,
+.td-boxed-layout .td-footer-wrap .span12
+{
+	background: #fafafa url("images/footer/top-shadow.png") repeat-x top;
+
+  .td-grid-wrap {
+    padding: 69px 13px 27px 13px;
+  }
+
+}
+
+
+
+.footer-logo-wrap {
+  padding-bottom: 27px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.footer-text-wrap {
+  padding-bottom: 21px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      text-align: center;
+  }
+}
+.footer-email-wrap {
+  padding-bottom: 24px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    sub footer
+*/
+
+.td-full-layout .td-sub-footer-wrap,
+.td-boxed-layout .td-sub-footer-wrap .container
+{
+  background-color: #2b2b2b;
+  .td-grid-wrap {
+    padding: 6px 0 10px 0;
+  }
+}
+
+
+.td-sub-footer-copy {
+  font-size:12px;
+  color:white;
+  position: relative;
+  top: 3px;
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: center;
+    min-height: 10px !important;
+  }
+}
+
+.td-sub-footer-menu {
+  text-align: right;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: center;
+    min-height: 10px !important;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  li {
+    display: inline-block;
+    position: relative;
+    zoom: 1;
+
+    a {
+      color:#f5f5f5;
+      font-size: 12px;
+      padding: 0px 10px 0px 10px;
+
+    /* responsive phone */
+      @media (max-width: 767px) {
+        padding: 0px 8px 0px 8px;
+      }
+    }
+
+
+
+    a:before {
+      position:absolute;
+      top:9px;
+      left:-1px;
+
+      display:block;
+      content:'';
+      height:9px;
+      width:1px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background-color: #a5a5a5;
+    }
+
+
+  }
+
+  li:first-child {
+    a:before {
+      display: none;
+    }
+  }
+
+}
+
+

@@ -1,0 +1,517 @@
+body {
+  color:@td_text_color;
+
+
+  @media (max-width: 767px) {
+    padding: 0px;
+  }
+
+
+
+}
+
+.td-page-wrap { //the border
+  background-color: white;
+  //border:1px solid #ebebeb;
+  border-top:none;
+  border-bottom:none;
+}
+
+//page wrapping fix (second wrap)
+.td-grid-wrap {
+  padding: 48px 0px 0px 0px; //remove on responsive
+
+  @media (min-width: 1200px) {
+    padding: 49px 13px 0px 13px;
+  }
+}
+
+
+
+
+//page wrapping
+.container-fluid {
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 1200px) {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1018px) {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+
+.td-page-meta {
+  display:none;
+}
+
+
+::-moz-selection {background: lighten(@td_theme_color, 10%); color: #fff;}
+::selection {background: lighten(@td_theme_color, 10%); color: #fff;}
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    used by the breadcrumbs
+*/
+.column_container {
+  position: relative;
+}
+
+/*  ----------------------------------------------------------------------------
+    bread crumbs
+*/
+.entry-crumbs {
+  position: absolute;
+  top:-25px;
+  left:0px;
+  font-family: @font2;
+  font-size:12px;
+  line-height: 14px;
+  color:#d0d0d0;
+  a {
+    color:#d0d0d0;
+    &:hover {
+      color:@td_gray !important;
+    }
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    Page title
+*/
+.td-page-title {
+      /* post title */
+      margin: 10px 0px 3px 0px;
+      line-height: 30px !important;
+	  position: relative;
+      top: -16px;
+
+      a, span {
+        color: #444444;//!important
+        text-decoration: none !important;
+        font-family: @font5;
+        font-size:30px;
+        line-height: 37px;
+        font-weight: normal;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+      }
+	  
+	  .td-search-query {
+		color:@td_theme_color;
+	  }
+}
+
+.td-page-title a:hover {
+  color:#444444;
+}
+	
+	
+/*  ----------------------------------------------------------------------------
+    Description on tag page and category page
+*/
+.category, .tag {
+  .entry-content {
+      background-color: #fcfcfc;
+      border-top: 2px solid @td_theme_color;
+      margin-bottom: 22px;
+      padding: 16px 23px 18px 23px;
+    font-style: italic;
+    color: #808080;
+    position: relative;
+    top:-2px;
+      p {
+        margin-bottom: 0px;
+      }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    404
+*/
+
+.td-404-title {
+  font-family: @font5;
+  font-weight: normal;
+  font-size:60px;
+  color: #4d4d4d;
+  text-align: center;
+  line-height: 60px;
+  padding: 30px 0px 17px 0px ;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      font-size: 30px;
+    line-height: 40px;
+  }
+
+}
+
+.td-404-sub-title {
+  font-family: @font5;
+  font-weight: lighter;
+  font-size:24px;
+  line-height: 30px;
+  color: #a6a6a6;
+  text-align: center;
+  padding: 0 0 40px 0;
+}
+
+.td-404-sub-sub-title {
+	text-align: center;
+	margin-bottom: 70px;
+	
+	a {
+		color: white;
+		padding: 7px 14px 8px 14px;
+		margin-left: 10px;
+		background-color: @td_theme_color;
+		
+		&:hover {
+			color: white;
+			background-color: #555555;
+			text-decoration: none !important;
+		}
+	}
+}
+
+.td-404-head {
+  text-align: center;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Search page
+*/
+
+
+/* responsive phone */
+@media (max-width: 767px) {
+  .search .td-page-title {
+    text-align: center;
+  }
+}
+
+.search-page-search-wrap {
+	padding-top: 19px;
+	
+	.td-search-form-widget {
+		margin-bottom: 10px;
+	}
+	
+	.td-widget-search-input {
+		background-color: #FCFCFC !important;
+		height: 24px;
+		border: 1px solid #F5F5F5 !important;
+		box-shadow: none !important;
+		outline: medium none;
+		color: #555555;
+	}
+	
+	.btn {
+		background-color: @td_theme_color;
+		height: 34px;
+		padding-top: 5px !important;
+		padding-bottom: 7px !important;
+	}
+}
+
+.td_search_subtitle {
+	padding-bottom: 42px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      text-align: center;
+  }
+}
+
+
+.search-page-search-wrap .td-widget-search-input {
+  width: 553px;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    width: 624px;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    width: 401px;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    width: 220px;
+  }
+
+  /* responsive phone */
+  @media (max-width: 400px) {
+    width: 200px;
+  }
+
+  /* desktop small */
+  @media (max-width: 315px) {
+    width: 170px;
+  }
+
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Author page
+*/
+
+.author .td-page-title {
+
+  /* responsive phone */
+  @media (max-width: 480px) {
+    text-align: center;
+  }
+}
+.td-author-counters {
+	font-family: @font5;
+	font-size: 11px;
+	font-style: italic;
+	line-height: 12px;
+	color: white;
+	margin-bottom: 17px;
+	
+	span {
+		padding: 2px 7px 3px 7px;
+		margin-right: 10px;
+	}
+	
+	.td-author-post-count {
+		background-color: #878787;
+	}
+	.td-author-comments-count {
+		background-color: #a8a8a8;
+	}
+}
+
+.author-page .desc {
+	top: 3px;
+	position: relative;
+	
+	.td-author-social {
+		margin-top: 9px;
+	}
+}
+
+.td-author-url {
+	margin: 7px 0 0 0;
+
+    a, a:hover {
+      color: #C7C7C7;
+    }
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    category page
+*/
+.td-category-page-subcats {
+	margin-bottom: 10px !important;
+	top: -12px;
+}
+
+.td-category-page-sub-ind {
+  border-left: 1px solid #959595;
+  border-bottom: 1px solid #959595;
+  width:8px;
+  height: 8px;
+  display: block;
+  margin-top: 1px;
+  margin-left: 6px;
+  position: relative;
+  left:2px;
+
+}
+
+/*  ----------------------------------------------------------------------------
+    Page navigation - pagination
+*/
+.page-nav {
+  padding: 31px 0px 68px 0px;
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      text-align: center;
+  }
+
+	a, span {
+		color: #333333;
+		background-color: #FFFFFF;
+		border: 1px solid #f5f5f5;
+		margin-right: 5px;
+		padding: 5px 10px 5px 10px;
+		min-width: 10px;
+		display: inline-block;
+		text-align: center;
+
+      /* responsive phone */
+      @media (max-width: 767px) {
+        padding: 0px 5px 0px 6px;
+        font-size: 12px;
+      }
+	}
+	
+	a:hover {
+		text-decoration: none !important;
+	}
+	
+	.extend {
+		border: none;
+	}
+	
+	.pages {
+		float:right;
+		margin: 0px;
+		padding: 4px 0px 6px 0px; 
+		border: none;
+
+
+      /* responsive portrait tablet */
+      @media (min-width: 768px) and (max-width: 1018px) {
+        display: none;
+      }
+      /* responsive phone */
+      @media (max-width: 767px) {
+          display: none;
+      }
+	}
+	
+	.current {
+		background-color: @td_theme_color;
+		border: 1px solid @td_theme_color;
+		color: white;
+	}
+	
+	.right-arrow {
+		padding-left:5px;
+        position: relative;
+        top: -1px;
+	}
+	.left-arrow {
+		padding-right:5px;
+        position: relative;
+        top: -1px;
+	}
+}
+
+.page-nav-post {
+  padding: 0px;
+  margin-bottom: 42px;
+  a {
+    padding: 0px;
+    border:none;
+    margin: 0px;
+    span {
+      background-color: white;
+      border:1px solid #f5f5f5;
+      color:@td_text_color;
+    }
+
+  }
+
+  span {
+    border: 1px solid @td_theme_color;
+    background-color: @td_theme_color;
+    color:white;
+    margin: 0px;
+  }
+
+  a:last-child {
+    margin-left: 4px;
+  }
+}
+
+/* no pagination spacer */
+.td-no-pagination {
+  margin-bottom: 51px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    attachement page
+*/
+.td-attachment-page-image {
+  margin-bottom: 21px;
+  margin-top: 10px;
+}
+
+.td-attachment-page-content {
+  margin-bottom: 21px;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    video - only in posts !
+*/
+
+.post embed,
+.post iframe,
+.post object,
+.post video,
+.post audio {
+  max-width: 100%;
+}
+
+/*  ----------------------------------------------------------------------------
+    twitter embed
+*/
+
+.twitter-tweet-rendered {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    admin bar
+*/
+
+/*  ----------------------------------------------------------------------------
+    admin bar
+*/
+.td-admin-bar-red {
+  color:red !important;
+  text-shadow: none !important;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    google plus oauth iframe used by ff & chrome
+* /
+//comment by Radu A, because Moz bar was not visible on chrome (on front end)
+body > iframe {
+  display: none;
+}*/

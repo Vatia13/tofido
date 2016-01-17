@@ -1,0 +1,866 @@
+/*  ----------------------------------------------------------------------------
+    module general
+*/
+
+.td_mod_wrap {
+
+  /* all modules have a margin bottom */
+  margin-bottom: 15px;
+
+  .entry-title a {
+    font-family: @font5;
+    color:@td_black ;//!important
+    font-weight: normal;
+  }
+
+  /*
+  .entry-title a:hover {
+    background-color: #F6F6F6;
+    text-decoration: none !important;
+  }
+  */
+
+
+  .entry-title {
+    margin: 0px;
+  }
+
+  .updated { //fix compatibility with some plugins
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .meta-info { /* entry category + comments + td_mvc */
+    position: relative;	
+  }
+
+
+  .entry-thumb:hover {
+    //.transition(opacity @td_transition_time);
+    //opacity: 0.97;
+  }
+
+}
+
+// thumb on mobile 100%
+.td_mod2,
+.td_mod5,
+.td_mod6 {
+  .entry-thumb {
+    /* responsive phone */
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    admin edit
+*/
+.td-admin-edit {
+  position: absolute;
+  left: 0px;
+  top:0px;
+  display: none;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.3);
+  color:white;
+
+  padding:3px 5px;
+  &:hover {
+    color:white;
+  }
+
+
+}
+
+.thumb-wrap:hover .td-admin-edit {
+  display: block;
+
+}
+
+.td_mod4 .td-admin-edit {
+  left: auto;
+  right: 0px;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    play button
+*/
+.thumb-wrap {
+  position: relative;
+
+  .video-play-icon-big {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+  }
+
+  .video-play-icon {
+    position: absolute;
+    top:42px;
+    left: 77px;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    author + date
+*/
+.meta-info {
+  font-family:@font2;
+  color:@td_gray;
+  font-size:12px;
+  time {
+    font-style: italic;
+    white-space: nowrap;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    comments and views
+*/
+.entry-comments-views {
+  display: inline-block;
+  color:@td_gray;
+  font-size:12px;
+  font-style: italic;
+
+
+
+  .td-sp { /* the small icons */
+    padding-right: 6px;
+    margin-left: 14px;
+    display: inline-block !important;
+    position: relative;
+    top:2px;
+  }
+
+  .td-sp-ico-comments {
+    cursor: pointer;
+  }
+
+  a {
+    color:@td_gray;
+    &:hover{
+      color:@td_gray;
+      text-decoration: none !important;
+    }
+  }
+}
+
+/* hide comments and views on phone */
+@media (max-width: 500px) {
+  .post .entry-comments-views {
+    display: none;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    category
+*/
+.entry-category {
+  font-family:@font3;
+  font-size:12px;
+  line-height: 10px;
+
+  a {
+    color:@td_text_color;
+  }
+  span {
+    font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;
+    font-size:18px !important;
+    line-height: 10px;
+    margin-right: 5px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    stars
+*/
+
+.td-review-star {
+  display: inline-block !important;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    The modules with Image + meta+ text below meta info align, title, author-date general
+*/
+
+.td_mod2, 
+.td_mod5,
+.td_mod6
+{
+    .thumb-wrap {
+		margin-bottom: 11px;
+	}
+	
+	.entry-title a,
+	.entry-title {
+		font-size:21px;
+		line-height: 25px;
+	}
+	
+	.meta-info {
+		margin: 2px 0px 6px 0px;
+	}
+	
+	.entry-comments-views {
+		line-height: 11px;
+		top: 2px;
+	}
+	
+	.entry-author-date {
+		padding-bottom: 7px; 
+	}
+	
+	.entry-review-stars {
+      display: inline-block;
+      height: 15px;
+      position: relative;
+      top:2px;
+	}
+
+    .entry-comments-views {
+      //top:0px;
+    }
+}
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    module 2
+*/
+
+.td_mod2 {
+
+	margin-bottom: 43px;
+
+  .thumb-wrap {
+    text-align: center;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      text-align: center;
+      .mx_image_background();
+    }
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    module 3
+*/
+
+.td_mod3 {
+	min-height: 76px;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      min-height: 64px !important;
+    }
+
+	.clearfix();
+
+	.entry-title a,
+	.entry-title {
+      font-size:15px;
+      line-height: 21px;
+      position: relative;
+
+      /* responsive portrait tablet */
+      @media (min-width: 768px) and (max-width: 1018px) {
+        min-height: 0px !important;
+      }
+	}
+	
+	.meta-info {
+		margin-top:1px;
+
+      /* responsive portrait tablet */
+      @media (min-width: 768px) and (max-width: 1018px) {
+          margin-left: 70px;
+      }
+	}
+  
+	.entry-author-date {
+      position: relative;
+      top:3px;
+      padding-bottom: 3px;
+	}
+
+    .entry-category {
+      position: relative;
+      top:5px;
+    }
+	
+	.entry-review-stars {
+		padding-top:2px;
+	}
+
+	.thumb-wrap img {
+		position: absolute;
+   }
+	.item-details {
+		margin-left: 117px;
+		position: relative;
+		top:-2px;
+    }
+}
+
+
+/* no thumb */
+.td_mod3.td_mod_no_thumb {
+  .item-details {
+    margin-left: 0px;
+  }
+}
+
+
+/* on portrait tablets - custom style */
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_mod3 {
+    margin-bottom: 10px;
+    .thumb-wrap {
+      width: 60px;
+    }
+
+    .item-details {
+      margin-left: 0px;
+    }
+
+    .entry-title a {
+      font-size: 14px;
+    }
+    .entry-title {
+      margin-left: 70px;
+      min-height: 46px;
+    }
+
+    .entry-author-date {
+      top:0px;
+      padding-bottom: 0px;
+    }
+
+    .video-play-icon {
+      //position: absolute;
+      right: 0px;
+      bottom: -38px;
+      left:auto;
+      top:auto;
+      width: 15px;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    module 4
+*/
+
+.td_mod4 {
+  min-height: 76px;
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    min-height: 64px !important;
+  }
+
+  .clearfix();
+
+  .entry-title a,
+  .entry-title {
+    font-size:15px;
+    line-height: 21px;
+    position: relative;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      min-height: 0px !important;
+    }
+  }
+
+  .meta-info {
+    margin-top:1px;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      margin-right: 70px;
+    }
+  }
+
+  .entry-author-date {
+    position: relative;
+    top:3px;
+    padding-bottom: 3px;
+  }
+
+  .entry-category {
+    position: relative;
+    top:5px;
+  }
+
+  .entry-review-stars {
+    padding-top: 2px;
+  }
+
+  /* thumb */
+  .thumb-wrap img {
+    position: absolute;
+    right:0px;
+  }
+
+
+  /* play icon */
+  .video-play-icon {
+    right: 3px !important;
+    left:auto !important;
+  }
+
+  .item-details {
+    margin-right: 117px;
+    position: relative;
+    top: -2px;
+  }
+}
+
+
+//no thumb
+.td_mod4.td_mod_no_thumb {
+  .item-details {
+    margin-right: 0px;
+  }
+}
+
+
+/* on portrait tablets - custom style */
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_mod4 {
+    margin-bottom: 10px;
+    .thumb-wrap .entry-thumb {
+      width: 60px;
+    }
+
+    .item-details {
+      margin-right: 0px;
+      min-height: 40px;
+    }
+
+    .entry-title a {
+      font-size: 14px;
+    }
+    .entry-title {
+      margin-right: 70px;
+    }
+
+    .entry-author-date {
+      top:0px;
+      padding-bottom: 0px;
+    }
+
+    .video-play-icon {
+      //position: absolute;
+      right: 0px !important;
+      bottom: -38px;
+      left:auto;
+      top:auto;
+      width: 15px;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    module 5
+*/
+
+.td_mod5 {
+  margin-bottom: 43px;
+
+  .thumb-wrap {
+    text-align: center;
+    /* responsive phone */
+    @media (max-width: 767px) {
+      text-align: center;
+      .mx_image_background();
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    module 6
+*/
+
+.td_mod6 {
+  margin-bottom: 31px;
+
+
+  .thumb-wrap {
+    text-align: center;
+    /* responsive phone */
+    @media (max-width: 767px) {
+      text-align: center;
+      .mx_image_background();
+    }
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    module td_module_aj_search
+*/
+
+.td-search-form {
+    margin: 16px 21px 16px 21px;
+}
+
+.td_mod_aj_search {
+  min-height: 67px;
+  margin: 0px 21px 0px 21px;
+
+  .clearfix();
+
+  .entry-title a,
+	  .entry-title {
+		font-size:13px;
+		line-height: 17px;
+		position: relative;
+	  }
+
+  .entry-author-date {
+    position: relative;
+    top:3px;
+    padding-bottom: 3px;
+  }
+
+  .entry-category {
+    position: relative;
+    top:5px;
+  }
+
+  .entry-review-stars {
+    padding-bottom: 3px;
+  }
+
+  .thumb-wrap img {
+    position: absolute;
+  }
+  .entry-thumb {
+		width: 70px;
+		height: 46px;
+	  } 
+  .item-details {
+    margin-left: 90px;
+	top: -2px;
+    position: relative;
+  }
+  .video-play-icon {
+	top: 24px;
+	left: 48px;
+  }
+}
+
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    mod 8 and 9
+*/
+
+.td_mod8,
+.td_mod9 {
+  .entry-review-stars {
+    display: inline-block;
+    height: 15px;
+    position: relative;
+    top:2px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    module 8
+*/
+.td_mod8 {
+
+  min-height: 235px;
+  margin-bottom: 49px;
+
+  .clearfix();
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    min-height: 50px;
+  }
+
+
+  .thumb-wrap img {
+    position: absolute;
+    max-width: 326px;
+    max-height: 235px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      max-height: 50px;
+      max-width: 50px;
+    }
+  }
+
+  .item-details {
+    margin-left: 366px;
+    top: -2px;
+    position: relative;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      margin-left: 62px;
+      top:-4px;
+    }
+
+    .meta-info {
+      top: 1px;
+      margin-bottom: 7px;
+    }
+  }
+
+
+  .video-play-icon-big {
+    top:186px;
+    left:276px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.span8 > .td_mod8 {
+
+  @media (min-width: 768px) and  (max-width: 1199px) {
+    min-height: 137px;
+    .thumb-wrap img {
+      position: absolute;
+      max-width: 190px;
+      max-height: 137px;
+    }
+
+    .item-details {
+      margin-left: 211px;
+    }
+
+    .video-play-icon-big {
+      top:89px;
+      left:141px;
+    }
+  }
+
+
+}
+
+
+/*  ----------------------------------------------------------------------------
+    module 9
+*/
+.td_mod9 {
+
+  min-height: 187px;
+  margin-bottom: 49px;
+
+  .clearfix();
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    min-height: 50px;
+  }
+
+
+  .thumb-wrap img {
+    position: absolute;
+    max-width: 260px;
+    max-height: 187px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      max-height: 50px;
+      max-width: 50px;
+    }
+  }
+
+  .item-details {
+    margin-left: 300px;
+    top: -2px;
+    position: relative;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      margin-left: 62px;
+      top:-4px;
+    }
+
+    .meta-info {
+      top: 1px;
+      margin-bottom: 7px;
+    }
+  }
+
+
+  .video-play-icon-big {
+    top:140px;
+    left:208px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+
+    min-height: 123px;
+
+
+    .thumb-wrap img {
+      max-width: 170px;
+      max-height: 123px;
+    }
+
+    .item-details {
+      margin-left: 191px;
+    }
+
+    .video-play-icon-big {
+      top:76px;
+      left:123px;
+    }
+  }
+}
+
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    td_module_search - used on the search page
+*/
+
+.td_mod_search {
+
+  min-height: 120px;
+  margin-bottom: 40px;
+
+  .clearfix();
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      min-height: 50px;
+  }
+
+
+  .thumb-wrap img {
+    position: absolute;
+    max-width: 120px;
+    max-height: 120px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+        max-height: 50px;
+        max-width: 50px;
+    }
+  }
+
+  .item-details {
+    margin-left: 146px;
+    top: -2px;
+    position: relative;
+
+	/* responsive phone */
+	@media (max-width: 767px) {
+	  margin-left: 62px;
+      top:-4px;
+	}
+
+	.meta-info {
+      top: 1px;
+      margin-bottom: 7px;
+    }
+  }
+
+  .entry-crumbs {
+    position: relative;
+    top:auto;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .video-play-icon {
+    top:96px;
+    left:94px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      top:28px;
+      left:28px;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    td-mega-menu - the mega menu module
+*/
+
+.td_mod_mega_menu {
+  width:22.0703125%;
+  float:left;
+  margin-bottom: 53px;
+
+  padding-top: 21px;
+
+  margin-left: 2.34375%;
+
+
+  .item-details {
+    h4 {
+      margin-top: 6px;
+      line-height: 23px;
+      font-size: 15px;
+    }
+    a {
+      font-family: @font5;//!important
+      font-weight: normal;
+      color: #333333;//!important
+      font-size: 15px;// !important
+      line-height: 21px;// !important
+      &:hover {
+        background-color: transparent !important;
+      }
+
+    }
+  }
+}
+
+.td-no-subcats {
+  .td_mod_mega_menu {
+    width:17.73991031390135%;
+    margin-left: 1.883408071748879%;
+  }
+
+}

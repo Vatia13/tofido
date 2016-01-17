@@ -1,0 +1,73 @@
+.td_top_authors  {
+	padding-bottom: 23px;
+	
+	img {
+      position: absolute;
+      max-width: 70px;
+	}
+
+	.item-details {
+		margin-left: 85px;
+		position: relative;
+        height: 70px;
+        top: 3px;
+		
+		span {
+			font-family: @font5;
+			font-size: 11px;
+			font-style: italic;
+			line-height: 12px;
+			color: white;
+			padding: 2px 7px 3px 7px;
+			margin-right: 10px;
+
+            /* responsive portrait tablet */
+            @media (min-width: 768px) and (max-width: 1018px) {
+              display: inline-block;
+            }
+		}
+	}
+
+    .td-active {
+        background-color: #fafafa;
+    }
+	
+	.td_mod_wrap {
+		min-height: 70px;
+		margin-bottom: 26px;
+      &:hover {
+        background-color: #fafafa;
+        cursor: pointer;
+      }
+
+	}
+	
+	.td-authors-url {
+		padding-top: 1px;
+		a {
+		  color: #d0d0d0;
+          font-family: @font2;
+          font-size:12px;
+		}
+
+        /* responsive portrait tablet */
+        @media (min-width: 768px) and (max-width: 1018px) {
+            display: none;
+        }
+	}
+	
+	.td-authors-name  a{
+		padding-bottom: 4px;
+		font-family: @font2;
+		font-size: 16px;
+		color: #202020;
+		line-height: 18px;
+	}
+	
+	.td-author-post-count {
+		background-color: #878787;
+	}
+	.td-author-comments-count {
+		background-color: #a8a8a8;
+	}
+}	

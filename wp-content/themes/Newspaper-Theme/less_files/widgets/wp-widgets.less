@@ -1,0 +1,504 @@
+/*  ----------------------------------------------------------------------------
+    widgets global
+*/
+
+
+@td_widget_margin_bottom:48px;
+
+.widget {
+  form {
+    margin-bottom: 0px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+	position: relative;
+	top: -17px;
+
+    li {
+
+      > a {
+        padding: 6px 10px 3px 12px;
+      }
+    }
+
+  }
+
+
+  a {
+    color:@td_text_color;
+  }
+}
+
+.widget_rss .block-title a {
+  color: #FFFFFF;
+  padding-left: 0px;
+}
+.widget_rss .block-title img {
+  padding-bottom: 3px;
+}
+.widget_rss ul {
+  padding-top: 9px;
+}
+
+.widget_recent_entries,
+.widget_archive,
+.widget_categories,
+.widget_nav_menu,
+.widget_meta,
+.widget_pages,
+.widget_rss_links,
+.widget_top-posts,
+.widget_recent_comments
+{
+  .block-title {
+    padding-bottom: 0px;
+  }
+  a {
+    display: block;
+  }
+
+  margin-bottom: @td_widget_margin_bottom;
+}
+
+
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_pages,
+.widget_recent_entries,
+.widget_rss {
+
+	.block-title {
+		margin-bottom: 0px;
+	}
+
+	ul {
+		padding-bottom: 1px;
+		position: relative;
+		top: 6px;
+		
+		li a {
+			padding: 9px 10px 0 12px;
+			
+			.td-widget-no,
+			.td-cat-no {
+				float: right;
+			}
+		}
+	}
+	
+	select {
+		background-color: #FCFCFC !important;
+		border: 1px solid #F5F5F5 !important;
+		margin-top: 26px;
+		width: 100%;
+		outline: none;
+		margin-bottom: 1px;
+	}
+	
+	.current_page_item a {
+		color: @td_theme_color;
+	}
+	
+	.post-date {
+		padding-left: 12px;
+		font: @font2;
+		font-style: italic;
+		font-size: 12px;
+		color: #CBCBCB;
+		position: relative;
+		top: -3px;
+	}
+}
+
+/*  ----------------------------------------------------------------------------
+    custom menu default widget
+*/
+.widget_nav_menu {
+  margin-bottom: 40px;
+
+  ul {
+    top: 0px;
+  }
+  .block-title {
+    margin-bottom: 10px;
+  }
+  .sub-menu {
+    padding-left: 12px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    search
+*/
+
+.widget_search {
+	margin-bottom: @td_widget_margin_bottom;
+	#s, #s:focus {
+		background-color: #fcfcfc !important;
+		height: 24px;
+	}
+	.btn {
+      position: absolute;
+      right: 0px;
+      height: 34px;
+      padding-top: 5px !important;
+      padding-bottom: 7px !important;
+	}
+}
+
+.td-widget-search-input {
+  margin-bottom: 0px !important;
+  width: 94%;
+}
+
+/*  ----------------------------------------------------------------------------
+    categories
+*/
+.widget_categories {
+	.children {
+		top: 0px;
+		padding-left: 21px;
+	}
+
+    .current-cat > a {
+      color: @td_theme_color;
+    }
+
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    calendar
+*/
+
+.widget_calendar {
+  margin-bottom: @td_widget_margin_bottom - 15;
+
+  table {
+    margin-left:auto;
+	margin-right:auto;
+	width: 100%;
+  }
+
+  td, td {
+    padding: 10px;
+	text-align: center;
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      padding: 5px;
+    }
+  }
+
+  td a {
+    color:@td_theme_color;
+  }
+
+  caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    menu widgets
+*/
+.widget_nav_menu {
+  .menu_icon {
+    display: none;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    text widget
+*/
+
+.widget_text {
+  margin-bottom: @td_widget_margin_bottom - 5;
+  .block-title {
+    margin-bottom: 17px;
+  }
+
+  ul {
+    list-style: disc url('@{td_css_path}images/icons/li.png');
+    top: 0px;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    tag widget
+*/
+
+.widget_tag_cloud {
+  margin-bottom: @td_widget_margin_bottom - 5;
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack twitter
+*/
+
+.widget_twitter  {
+  margin-bottom: @td_widget_margin_bottom - 17;
+
+  li {
+    border-bottom: 1px solid #f2f2f2 !important;
+    margin-bottom: 4px;
+    padding-bottom: 5px;
+    position: relative;
+    top: -6px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  li:last-child {
+	border-bottom: none !important;
+  }
+
+  a {
+    color:#00aced;
+    padding: 0px !important;
+  }
+
+  .timesince {
+    color:@td_gray;
+    font-size:12px;
+    font-style: italic;
+    display: block;
+
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack facebook
+*/
+
+.widget_facebook_likebox {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+
+  iframe {
+    width: 105% !important;
+    position: relative;
+    left:-5px;
+    height: 309px !important;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      height: 360px !important;
+    }
+    /* responsive phone */
+    @media (max-width: 767px) {
+      height: 310px !important;
+    }
+  }
+
+  .block-title {
+    margin: 0px 0px 17px 0px;
+    a {
+      padding: 0px;
+    }
+  }
+
+}
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack smily face
+*/
+
+img#wpstats {
+  display:none;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack subscription email
+*/
+
+.jetpack_subscription_widget {
+  margin-bottom: @td_widget_margin_bottom;
+
+  label {
+    display: inline;
+    padding: 0px !important;
+    font-size: 20px;
+  }
+
+  .block-title {
+    margin-bottom: 17px;
+
+    label {
+      background: none;
+    }
+  }
+
+  p {
+    margin: 0px 14px 21px 0px;
+  }
+  #subscribe-field {
+    width: 100% !important;
+    padding: 6px !important;
+    margin-bottom: 5px;
+  }
+
+  input[type="submit"] {
+    .btn();
+    .wpb_button();
+    .wpb_btn-inverse();
+    margin-bottom: 0px;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    jetpack widget-grofile avatar profile
+*/
+
+.widget-grofile {
+  margin-bottom: @td_widget_margin_bottom - 3;
+  text-align: center;
+  .block-title {
+    text-align: left;
+  }
+
+  .grofile-thumbnail {
+    height: 150px;
+    width: 150px;
+  }
+
+  .grofile-meta h4 {
+    margin: 0px;
+    text-transform: capitalize;
+  }
+  h4 {
+    margin: 5px !important;
+  }
+}
+
+.widget_jetpack_readmill_widget {
+  margin-bottom: 42px;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack image
+*/
+
+.widget_image {
+  margin-bottom: @td_widget_margin_bottom - 11;
+  img {
+    margin-top: 0px !important;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    jetpack rss
+*/
+
+.widget_rss {
+  margin-bottom: @td_widget_margin_bottom;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    most viewed bars
+*/
+
+.widget_most_viewed_bars {
+  padding-bottom: 47px;
+
+  ul {
+    width: 90% !important;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      width: 98% !important;
+    }
+
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      width: 87% !important;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      width: 95% !important;
+    }
+
+
+    a {
+      line-height: @baseLineHeight !important;
+
+    }
+  }
+}
+
+.popular_posts_bars_comment_count_hold a {
+  font-family: @font2;
+  font-size:13px;
+}
+
+/*  ----------------------------------------------------------------------------
+    recent comments
+*/
+.widget_recent_comments {
+	ul {
+		top: -14px;
+	}
+	
+	li {
+		padding: 3px 0px 6px 0px;
+	}
+	
+	.recentcomments {
+		margin-left: 10px;
+		
+		.url {
+			color: @td_theme_color;
+		}
+	}
+	
+	margin-bottom: 23px;
+	
+}
+
+/*  ----------------------------------------------------------------------------
+    tags
+*/
+.widget_tag_cloud .tagcloud a {
+  background-color: #B3B3B3;
+  color: white !important;
+  font-family: 'PT Sans',sans-serif;
+  font-size: 13px !important;
+  font-weight: normal;
+  margin: 0 2px 5px 0;
+  padding: 1px 8px 3px;
+  text-decoration: none !important;
+  display: inline-block;
+
+  &:hover {
+    background-color: @td_theme_color;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    pages
+*/
+.widget_pages .current_page_parent > a{
+  color: @td_theme_color;
+}

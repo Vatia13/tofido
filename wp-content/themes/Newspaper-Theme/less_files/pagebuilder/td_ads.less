@@ -1,0 +1,370 @@
+/*  ----------------------------------------------------------------------------
+    the classes used by the theme to hide the ads on specific resolutions
+*/
+
+
+
+.td-rec-hide-on-tl {
+  display:none;
+  /* responsive phone */
+  @media (max-width: 767px) {
+    display: block;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    display: block;
+  }
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.td-rec-hide-on-m {
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.td-rec-hide-on-tp {
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    display: none;
+  }
+}
+
+.td-rec-hide-on-p {
+  /* responsive phone */
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    Google ads
+*/
+
+
+/* header logo + google ad */
+.td-g-rec-id-header {
+  position: relative;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
+  .adsbygoogle {
+    position: absolute;
+    z-index: 9999;
+    top:40px;
+    right: 117px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      top:25px;
+      right:48px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      right: 11px;
+      top:29px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      position: static;
+    }
+  }
+}
+
+/* header style 3 + 6 - full width logo + content header ad  */
+.header-content-rec .td-g-rec-id-header {
+  text-align: center;
+  /* responsive phone */
+  @media (max-width: 767px) {
+    text-align: left;
+  }
+
+
+  .adsbygoogle {
+    position: relative !important;
+    top:28px;
+    right: auto;
+    z-index: auto;
+  }
+}
+
+
+/* sidebar google ad */
+.td-g-rec-id-sidebar {
+  position: relative;
+  text-align: center;
+  .adsbygoogle {
+    position: relative;
+    top:-3px;
+    margin-bottom: 46px;
+  }
+}
+
+
+/* inline ads */
+.td-g-rec-id-content_inline,
+.td-g-rec-id-content_top,
+.td-g-rec-id-content_bottom,
+{
+  position: relative;
+  text-align: center;
+
+  .adsbygoogle {
+    position: relative;
+    margin-bottom: 20px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      left:-14px;
+    }
+  }
+}
+
+.td-g-rec-id-content_top {
+  padding-top: 4px;
+}
+
+
+/* inline ads left */
+.td-g-rec-id-content_inlineleft {
+  float:left;
+  margin-right: 18px;
+  margin-bottom: 15px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    float:none;
+    margin-right: 0px;
+    text-align: center;
+  }
+}
+
+
+
+/* inline ads right */
+body div.td-g-rec-id-content_inlineright  {
+  float:right;
+  margin-left: 18px;
+  margin-bottom: 15px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    float:none;
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Generic hand made responsive ads - show only on - used to hand made responsive ads
+*/
+
+
+.td-visible-desktop {
+  display: none;
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+      display: block;
+  }
+}
+
+
+.td-visible-tablet-l {
+  display: block;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+      display: none;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+      display: none;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: none;
+  }
+}
+
+.td-visible-tablet-tp {
+  display: none;
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+      display: block;
+  }
+}
+
+.td-visible-phone {
+  display: none;
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: block;
+  }
+}
+
+
+/* header generic ad */
+.td-a-rec-id-header {
+  position: relative;
+  top:29px;
+
+  //padding-right: 15px;
+  left:-15px;
+  text-align: center;
+
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    //padding-right: 48px;
+    left:-48px;
+    top:25px;
+    text-align: right;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    //padding-right: 11px;
+    left:-11px;
+    text-align: right;
+    top:29px;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    top:0px;
+    //padding-right: 0px;
+    left:0px;
+  }
+}
+
+
+// fix for hand made responsive generic ads (on tablets landscape we need a little bit more room at the top)
+.td-a-rec-id-header .td-visible-tablet-l {
+  position: relative;
+  top:11px;
+}
+
+/* header style 3 + 6 - full width logo + content header ad  */
+.header-content-rec .td-a-rec-id-header {
+  text-align: center;
+  left:0px;
+  position: relative;
+  top:26px !important;
+
+  .td-visible-tablet-l {
+    top:0px;
+  }
+
+  //hack to center the phone ad on the left
+  .td-visible-phone {
+    text-align: left;
+    position: relative;
+    left:-39px;
+
+  }
+
+
+
+}
+
+
+
+/* sidebar generic ads */
+.td-a-rec-id-sidebar {
+  position: relative;
+  text-align: center;
+  top:-4px;
+  margin-bottom: 46px;
+}
+
+
+
+/* inline ads */
+.td-a-rec-id-content_inline,
+.td-a-rec-id-content_top,
+.td-a-rec-id-content_bottom,
+{
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Fixes Jetpack share icons */
+.td-a-rec-id-content_bottom {
+  clear: both;
+}
+
+/* inline ads left align */
+.td-a-rec-id-content_inlineleft {
+  float:left;
+  margin-right: 18px;
+  margin-bottom: 15px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    float:none;
+    margin-right: 0px;
+    text-align: center;
+  }
+}
+
+
+/* inline ads right align */
+
+/* inline ads left align */
+.td-a-rec-id-content_inlineright {
+  float:right;
+  margin-left: 18px;
+  margin-bottom: 15px;
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    float:none;
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+
+// fix z-index on style 4
+.td-header-style-1 .td-g-rec-id-header .adsbygoogle {
+  z-index: 0;
+}
+
+
+/*
+
+
+custom css align
+
+
+
+*/
+
+.td-a-rec-id-custom_ad_1,
+.td-a-rec-id-custom_ad_2,
+.td-a-rec-id-custom_ad_3,
+.td-g-rec-id-custom_ad_1,
+.td-g-rec-id-custom_ad_2,
+.td-g-rec-id-custom_ad_3 {
+  display: table;
+  margin-bottom: 49px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

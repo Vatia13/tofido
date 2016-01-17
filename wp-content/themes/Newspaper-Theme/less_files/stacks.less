@@ -1,0 +1,588 @@
+/*
+
+BLOG style
+
+*/
+
+
+
+// header - text logo --------------------------------------------------------------------------------------------------
+.blog-stack {
+  .td-logo-rec-wrap {
+    text-align: center;
+
+    .header-logo-wrap {
+      margin: 60px 10px 60px 30px;
+      font-family: "Volkorn" !important;
+
+      img {
+        margin-left: 0px;
+        width: auto;
+
+        /* responsive phone */
+        @media (max-width: 767px) {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      span {
+        font-family: "Volkorn" !important;
+      }
+
+      /* responsive phone */
+      @media (max-width: 767px) {
+        display: block;
+        margin: 10px 0px;
+        padding: 0px;
+      }
+
+      .td-logo-text {
+        font-size: 75px;
+        line-height: 60px;
+        margin: 0px;
+
+        /* responsive phone */
+        @media (max-width: 767px) {
+          font-size: 36px;
+          line-height: 36px;
+        }
+      }
+
+      .td-tagline-text {
+        letter-spacing: 1.8px;
+        font-size: 11px;
+        opacity: 0.5;
+        margin: 0px;
+
+        /* responsive phone */
+        @media (max-width: 767px) {
+            display: none;
+        }
+      }
+
+      .td-logo-wrap-align {
+        height: auto;
+      }
+
+      .td-logo-wrap {
+        left: 0px;
+        padding: 0px;
+      }
+    }
+  }
+
+
+
+
+
+
+
+  // typography
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Volkorn";
+  }
+}
+
+
+// main menu -----------------------------------------------------------------------------------------------------------
+.blog-stack {
+
+  // search
+  #td-top-search {
+    position: relative;
+    right: auto;
+    display: inline-block;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+        top: auto;
+    }
+  }
+
+  #search-button .td-sp-ico-search {
+    top: 10px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      top: 13px;
+      left: 0px;
+    }
+  }
+
+  .header-search-wrap .dropdown-menu {
+    border: 1px solid #ebebeb;
+    box-shadow: none;
+
+    #td-header-search {
+      background-color: transparent !important;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      top: 50px;
+      left: auto;
+      right: -2px;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+
+
+  .sf-sub-indicator {
+    top:22px;
+  }
+
+
+  // menu
+  #td-top-menu > div {
+    display: inline-block;
+  }
+
+  .td-menu-wrap #td-top-menu {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    padding-left: 0px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+        margin-right: 0px;
+    }
+  }
+
+  .td-menu-wrap {
+    height: 52px;
+  }
+
+  .sf-menu ul .current-menu-item > a {
+    background-color: #ffffff;
+  }
+
+  .sf-menu .td-not-mega.current-menu-parent li:first-child {
+    border-top: 1px solid #ebebeb;
+  }
+
+  .sf-menu .td-not-mega.current-menu-parent li:last-child a {
+    border-bottom: 0px;
+  }
+
+  .sf-menu .current-menu-parent .current-menu-item a,
+  .sf-menu .current-post-ancestor > a {
+    background-color: #ffffff;
+  }
+
+  // fix td-affix menu open mega and no-mega menu
+  .td-affix .sf-menu .td-not-mega ul {
+    top: 53px;
+  }
+
+  .td-affix .sf-menu .td-mega-menu ul {
+    top: 52px;
+  }
+
+  .sf-menu > li > a {
+    border-bottom: 0px !important;
+    height: 52px;
+    padding: 0px 19px 0px 19px;
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+        font-size: 14px;
+    }
+  }
+
+  .sf-menu ul .menu-item a {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+
+  .sf-menu ul .block-mega-child-cats a {
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+
+  // fix mobile menu
+  .menu-header-menu-container {
+    /* responsive phone */
+    @media (max-width: 767px) {
+        display: block;
+    }
+  }
+
+  // hide menu on mobile
+  .td-menu-center .sf-menu {
+    /* responsive phone */
+    @media (max-width: 767px) {
+        display: none;
+    }
+  }
+
+
+  .sf-menu a.sf-with-ul {
+    padding-right: 29px;
+  }
+
+  .sf-menu ul .td-not-mega > a {
+    padding: 5px 14px 5px 19px;
+  }
+
+  .more-link-wrap.wpb_button {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .block-mega-child-cats {
+    margin-top: 21px;
+  }
+
+  // menu border removed
+  .td-menu-background:after,
+  .td-menu-wrap:after,
+  .td-menu-background,
+  .td-menu-wrap {
+    background: none;
+  }
+  .td-menu-background {
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    height: 52px;
+  }
+
+  // mega menu next/prev
+  .td_block_mega_menu .td-ajax-next-page,
+  .td_block_mega_menu .td_ajax-prev-page {
+    background-color: #212121;
+  }
+
+  .td_mod_mega_menu .item-details a:hover {
+    text-decoration: none !important;
+  }
+
+  // menu shadow removed
+  .sf-menu ul {
+    box-shadow: none;
+  }
+
+  // menu add border
+  .td-mega-menu .sub-menu {
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+  }
+
+
+  // stuff
+
+  // pagination
+  .page-nav {
+    font-family: "Volkorn";
+    font-size: 16px;
+
+    .current {
+      background-color: transparent;
+      border-color: #212121;
+      border-width: 2px;
+      border-style: solid;
+      color: #212121;
+    }
+
+    a,
+    span {
+      border: 0px;
+    }
+  }
+
+
+  // buttons
+  .wpb_button,
+  .form-submit input,
+  .wpcf7-submit {
+    font-family: "Volkorn";
+    padding-top: 7px !important;
+  }
+  .widget_search .btn {
+    padding-top: 7px !important;
+  }
+  .td-post-text-content .more-link-wrap {
+    padding: 0px !important;
+    margin-bottom: 0px;
+    background-color: transparent !important;
+
+    a {
+      padding: 8px 20px 8px 20px !important;
+      outline: 2px solid #212121;
+      color: #212121;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none !important;
+      }
+
+      &:focus {
+        outline-offset: 0px;
+      }
+    }
+  }
+
+  // featured images blog
+  .td-post-featured-image figure .wp-caption-text {
+    padding-bottom: 0px;
+  }
+
+
+  // footer
+  .td-footer-wrap {
+    background-image: none !important;
+    border-top: 1px solid #ebebeb;
+  }
+
+  // dropcaps
+  .dropcap {
+    font-family: "Volkorn";
+  }
+
+  .dropcap2 {
+    font-size: 73px;
+    margin: 14px 13px 0 -5px;
+    height: auto;
+    width: auto;
+    line-height: 48px;
+  }
+
+  // fix the padding content
+  .td-page-wrap .span8 .td-post-text-content .td-paragraph-padding-1 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .post header h1 a {
+    /* responsive phone */
+    @media (max-width: 767px) {
+      line-height: 32px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      line-height: 32px;
+    }
+  }
+
+  // post
+  &.single_template_3 .td-post-featured-image {
+    margin-top: -14px;
+  }
+
+  // post sharing
+  .td-tags-and-social-wrapper-box {
+    border: 0px;
+    background-color: transparent;
+    padding: 0px;
+  }
+
+  .td-social-sharing-buttons {
+    height: auto;
+    background-color: transparent;
+    margin-top: 40px;
+
+    .td-sp {
+      display: none;
+    }
+
+    .td-social-but-text {
+      top: 0px;
+      padding: 8px 20px;
+      font-family: "Volkorn";
+      text-transform: none;
+      font-size: 16px;
+      font-weight: normal;
+      outline: 2px solid #212121;
+      color: #212121;
+    }
+  }
+
+  .td-social-twitter {
+    .td-social-but-text:hover {
+      outline-color: #55acee;
+      color: #55acee;
+    }
+  }
+
+  .td-social-facebook {
+    .td-social-but-text:hover {
+      outline-color: #47639e;
+      color: #47639e;
+    }
+  }
+
+  .td-social-google {
+    .td-social-but-text:hover {
+      outline-color: #dd4b39;
+      color: #dd4b39;
+    }
+  }
+
+  .td-social-pinterest {
+    .td-social-but-text:hover {
+      outline-color: #cb2027;
+      color: #cb2027;
+    }
+  }
+
+  // source via
+  .post-source-via {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .td-tag-black {
+    background-color: #212121;
+  }
+
+  .td-tags a:hover {
+    text-decoration: none !important;
+  }
+
+
+  // author
+  .td-author-name a,
+  .prev-post div,
+  .next-post div,
+  #respond #reply-title {
+    font-family: "Volkorn";
+  }
+
+  .author-box-wrap {
+    background-color: transparent;
+    border: 0px;
+    outline: 2px solid #212121;
+  }
+
+  // comments + contact form 7
+  .comment-form textarea,
+  .comment-form textarea:focus,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input,
+  textarea {
+    background-color: transparent;
+    border: 1px solid #777777 !important;
+  }
+
+  // font change
+  .comments {
+    cite {
+      font-family: "Volkorn";
+      font-style: normal;
+      font-size: 16px !important;
+    }
+  }
+
+  // search
+  .widget_search #s {
+    background-color: transparent !important;
+    border-right: 0px !important;
+  }
+
+
+  //blocks
+
+  .td_block_wrap .block-title a, .block-title span, .block-title label {
+      padding-top: 6px;
+  }
+
+
+
+
+  //widgets
+
+  .widget {
+    ul {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size:13px;
+    }
+  }
+
+
+  .textwidget {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size:13px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    td modern blog stack
+*/
+
+
+.td-modern-blog {
+
+
+  //header - hide the search button
+  #td-top-search {
+    display: none;
+  }
+
+
+
+
+  .td-li-wrapper-menu {
+    padding-right: 0px;
+  }
+
+
+
+}

@@ -1,0 +1,910 @@
+/*  ----------------------------------------------------------------------------
+    variablez
+*/
+
+
+
+
+@td_menu_height:48px;
+@td_submenu_bg:white; //background css property
+@td_menu_line_color:#f57272; //007
+
+//general menu
+@td_menu_font:'Ubuntu', sans-serif;
+
+//top menu
+@td_menu_fontsize:16px;
+//@td_menu_color:@td_text_color;
+@td_menu_color:#202020;
+
+//submenu
+@td_submenu_fontsize:14px;
+@td_submenu_color:#3d4449;
+@td_submenu_color_hover:white;
+@td_submenu_bg_hover:@td_theme_color;
+
+@td_separator_color:#4d4d4d;
+
+
+
+/*  ----------------------------------------------------------------------------
+    diverse
+*/
+
+.td-menu-placeholder {
+  height: @td_menu_height + 3;
+  position: relative;
+}
+
+
+.td-full-layout .td-menu-background,
+.td-boxed-layout .td-menu-wrap,
+{
+  background-color: white;
+  background: white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAGCAQAAACoGTy6AAAAF0lEQVQImWNgYGIAIWYGBhYGBlYGBjYAAKAAF4mj2TgAAAAASUVORK5CYII=') repeat-x;
+  background-position: bottom;
+  border-bottom: 4px solid white;
+  //do not change z-index
+
+  //.transition(background-color 2s);
+
+  //bottom shadow - no pointer events
+  &:after {
+    position:absolute;
+    bottom:-16px;
+    left:0px;
+
+    display:block;
+    content:'';
+    height:12px;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAJFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmWAJHAAAADHRSTlMYFREODAoHBgQDAgGDBS5qAAAAIElEQVR4XmNgYBBgUGAwYHBgCGBIYChgaGCYwLCAYQMAH7gEIQV1/xQAAAAASUVORK5CYII=') repeat-x;
+    pointer-events:none;
+  }
+}
+
+//on boxed layout fa opacity  td-menu-wrap
+.td-boxed-layout {
+  .td-menu-wrap:after {
+    opacity: 0.5;
+  }
+
+  .td-affix .td-menu-wrap:after {
+    opacity: 0.9;
+  }
+}
+
+
+
+.td-menu-background {
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0); //chrome / safari / ios fix for 3d parallax
+  transform: translate3d(0, 0, 0); //chrome / safari / ios fix for 3d parallax
+  z-index: 2;
+}
+
+.td-affix {
+  left: 0;
+  right: 0;
+  top: 0px;
+  height: 48px;
+  z-index: 9999;
+  position: fixed !important;
+}
+
+// affix when have admin bar
+.admin-bar .td-affix {
+  top: 32px;
+
+  @media (min-width: 527px) and (max-width: 782px) {
+    z-index: 100;
+    top: 46px;
+  }
+  @media (max-width: 602px) {
+    top: 0px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    affix transparenta pe full
+*/
+.td-full-layout .td-affix {
+  //.transition(background-color 2s);
+  background-color: rgba(254, 254, 253, 0.95) !important;
+  .sub-menu {
+    //.transition(background-color 2s);
+    background-color: rgba(254, 254, 253, 0.95);
+  }
+
+  .dropdown-menu {
+    opacity: 0.99;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    affix transperenta pe boxed
+*/
+.td-boxed-layout .td-affix {
+  .sub-menu {
+    //.transition(background-color 2s);
+    background-color: rgba(254, 254, 253, 0.98);
+  }
+
+  .td-menu-wrap {
+    //.transition(background-color 2s);
+    background-color: rgba(254, 254, 253, 0.98) !important;
+  }
+
+
+}
+
+
+
+
+.td-menu-wrap {
+  position: relative;
+  height: @td_menu_height;
+
+
+
+
+  #td-top-menu { //menu padding
+    padding-left: 15px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      padding-left: 48px;
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      padding-left: 11px;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+  }
+}
+
+
+
+
+/*
+  SF menu
+*/
+
+
+.sf-menu, .sf-menu ul, .sf-menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sf-menu {
+  line-height: 1.0;
+}
+
+.sf-menu ul {
+  position: absolute;
+  top: -999em;
+  width: 10em; /* left offset of submenus need to match (see below) */
+}
+
+.sf-menu ul li {
+  width: 100%;
+}
+
+.sf-menu li:hover {
+  visibility: inherit; /* fixes IE7 'sticky bug' */
+}
+
+.sf-menu li {
+  float: left;
+  position: relative;
+}
+
+.sf-menu .td-not-mega > a {
+  display: block;
+  position: relative;
+}
+
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+  left: 0;
+  top: @td_menu_height + 4; /* match top ul list item height */
+  z-index: 99;
+}
+
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+  top: -999em;
+}
+
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+  left:	10em; /* match ul width */
+  top: 0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+  top: -999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+  left:	10em; /* match ul width */
+  top: 0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+  float: left;
+
+
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    All the links
+*/
+.sf-menu .td-not-mega > a {
+  text-decoration:none !important;
+  font-family: @td_menu_font;
+}
+
+.sf-menu .td-not-mega > a:hover {
+  text-decoration: none !important;
+}
+.sf-menu ul .td_mega_menu_sub_cats a.cur-sub-cat:hover {
+  background-color: #FFFFFF;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Top menus
+*/
+
+
+/* remove the down arrow on links with  (icosn menus) */
+.td-no-down-arrow > a {
+  padding-right: 11px !important;
+  padding-left: 11px !important;
+
+
+
+  .sf-sub-indicator {
+    display: none;
+  }
+}
+
+.sf-menu > li {
+
+}
+
+//top links
+.sf-menu > li > a {
+  padding: 0px 11px 0px 11px;
+  height: @td_menu_height;
+  line-height: @td_menu_height + 3;
+  font-size:@td_menu_fontsize;
+  color:@td_menu_color ;//!important
+  border-bottom: 4px solid transparent;
+  z-index: 9999;
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    font-size: 14px;
+  }
+}
+
+
+/* menu icons */
+.sf-menu .menu_icon {
+   position: relative;
+   top:13px;
+   float: left;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+        top:11px;
+    }
+ }
+
+.sf-menu .sub-menu .menu_icon {
+  top:0px;
+}
+
+.sf-menu .menu_hidden {
+  display: none !important;
+}
+
+/* hover and current menu */
+.sf-menu > .current-menu-item > a, // current top menu
+.sf-menu > .current-menu-ancestor > a, //current menu parent (top)
+.sf-menu > li > a:hover, //normal hover
+.sf-menu > .sfHover > a //when the submenu is opend
+{
+  border-bottom: 4px solid @td_theme_color;
+}
+// 980 responsive mega menu
+
+.td_980_resp {
+
+  .td_mod_mega_menu {
+    margin-left: 19px;
+  }
+  .td-mega-menu ul {
+    left: 0px !important;
+  }
+  .td-mega-menu .td_block_inner{
+    width: 800px !important;
+  }
+  .td-mega-menu .td-mega-grid,
+  .td-mega-menu .td-no-subcats .td_block_inner,
+  .td-mega-menu ul {
+    width: 996px !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1018px) {
+    .td_mod_mega_menu {
+      margin-left: 14px !important;
+    }
+    .td-mega-menu ul {
+      left: 0px !important;
+    }
+    .td-mega-menu .td_block_inner{
+      width: 600px !important;
+    }
+    .td-mega-menu .td-mega-grid,
+    .td-mega-menu .td-no-subcats .td_block_inner,
+    .td-mega-menu ul {
+      width: 748px !important;
+    }
+  }
+}
+
+// 980 fixed mega menu
+
+.td_980_not_resp {
+
+  .td_mod_mega_menu {
+    margin-left: 19px;
+  }
+  .td-mega-menu ul {
+    left: 0px !important;
+  }
+  .td-mega-menu .td_block_inner{
+    width: 800px !important;
+  }
+  .td-mega-menu .td-mega-grid,
+  .td-mega-menu .td-no-subcats .td_block_inner,
+  .td-mega-menu ul {
+    width: 996px !important;
+  }
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    submenu
+*/
+
+
+.sf-menu ul { // wrap
+  box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+  background: @td_submenu_bg;
+
+
+
+  .td-not-mega > a {
+    padding: 5px 14px 7px 13px;
+    color: @td_submenu_color;
+    .transition(none);
+  }
+}
+
+.sf-menu ul .td-not-mega > a:hover, //normal hover
+.sf-menu ul .sfHover > a, //current opend menu
+.sf-menu ul .current-menu-ancestor > a, //current ancestor
+.sf-menu ul .current-menu-item > a //current menu
+{
+  color: @td_submenu_color_hover !important;
+  background: @td_submenu_bg_hover;
+}
+
+.block-mega-child-cats a:hover {
+  background-color: @td_theme_color;
+}
+.td_mega_menu_sub_cats .block-mega-child-cats a:hover {
+  color: #FFFFFF;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+  outline: 0;
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    arrows
+*/
+.sf-menu a.sf-with-ul {
+  padding-right: 29px;
+  min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+
+
+/* top menu down white */
+.sf-sub-indicator {
+  position:	absolute;
+  right: 12px;
+  top: 24px; /* IE6 only */
+  text-indent: -999em;
+  overflow:	hidden;
+  .td-sp-menu-arrow-down-white();
+  .td-sp(); //is sprite
+}
+
+
+/* top menu down hover */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+  .td-sp-menu-arrow-down-white();
+}
+
+//right black (not hover)
+.sf-menu ul a > .sf-sub-indicator { //hover
+  .td-sp-menu-right-dark();
+}
+
+/* right white ( hover) */
+.sf-menu ul .sf-sub-indicator {
+  top:14px;
+  .td-sp-menu-right-white();
+}
+
+/* hover right white */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator,
+.sf-menu ul .current-menu-ancestor > a > .sf-sub-indicator,
+.sf-menu ul .current-menu-item > a > .sf-sub-indicator
+{
+  .td-sp-menu-right-white();
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Mobile menu
+*/
+
+#mobileMenu_menu-top {
+
+}
+
+
+
+
+.td_mobile_menu_wrap {
+  display:none !important;
+  margin:0px 0px 0px 0px !important;
+  vertical-align: top;
+
+  position: relative;
+  top:12px;
+  left:-6px;
+
+
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    display:block !important;
+  }
+}
+
+.td_mobile_menu_wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 28px;
+  width: 200px;
+  background: #f2f2f2;
+  border: 1px solid;
+  border-color: white #f7f7f7 whitesmoke;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.td_mobile_menu_wrap:before, .td_mobile_menu_wrap:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px dashed;
+  border-color: #888888 transparent;
+  pointer-events: none;
+}
+
+.td_mobile_menu_wrap:before {
+  border-bottom-style: solid;
+  border-top: none;
+}
+
+.td_mobile_menu_wrap:after {
+  margin-top: 7px;
+  border-top-style: solid;
+  border-bottom: none;
+}
+
+#mobileMenu_menu-top {
+  position: relative;
+  width: 130%;
+  margin: 0;
+  padding: 6px 8px 6px 10px;
+  height: 28px;
+  line-height: 14px;
+  font-size: 12px;
+  color: #62717a;
+  text-shadow: 0 1px white;
+  background: #f2f2f2; /* Fallback for IE 8 */
+  background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+#mobileMenu_menu-top:focus {
+  width: 100%;
+  color: #394349;
+  outline: 2px solid #49aff2;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+#mobileMenu_menu-top > option {
+  margin: 3px;
+  padding: 6px 8px;
+  text-shadow: none;
+  background: #f2f2f2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Fix for IE 8 putting the arrows behind the select element. */
+
+.lt-ie9 #mobileMenu_menu-top {
+  z-index: 1;
+}
+
+.lt-ie9 #mobileMenu_menu-top {
+  z-index: -1;
+}
+
+.lt-ie9 #mobileMenu_menu-top:focus {
+  z-index: 3;
+}
+
+/* Dirty fix for Firefox adding padding where it shouldn't. */
+
+@-moz-document url-prefix() {
+#mobileMenu_menu-top {
+  padding-left: 6px;
+}
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    Search
+*/
+
+
+.header-search-wrap {
+  @searchDropMenuWidth:342px;
+
+  @searchButtonWidth:40px;
+
+
+
+  .header-search {
+    z-index: 3;
+  }
+
+  /* search toggle button */
+  #search-button {
+    height: @td_menu_height;
+    line-height: @td_menu_height + 3;
+    width: @searchButtonWidth;
+    text-align: left;
+    display: inline-block;
+
+
+
+    .td-sp-ico-search {
+      position: relative;
+      left:6px;
+      top:13px;
+
+      /* responsive monitor */
+      @media (min-width: 1200px) {
+        left:8px;
+      }
+      /* responsive phone */
+      @media (max-width: 767px) {
+        top:14px;
+      }
+    }
+  }
+
+
+
+
+  /* the drop down */
+  .dropdown-menu {
+	padding: 0px;
+    top:@td_menu_height - 2;
+    border-radius: 0px;
+    border: none;
+
+    width: @searchDropMenuWidth;
+    left:-@searchDropMenuWidth + @searchButtonWidth;
+    background: @td_submenu_bg;
+	box-shadow: 0.9px 0.866px 5px 0 rgba(0, 0, 0, 0.3);
+    border-top:4px solid @td_theme_color;
+
+
+
+    /* search form */
+    .btn {
+      height: 33px;
+      position: absolute;
+      right: 21px;
+
+      /* responsive phone */
+      @media (max-width: 767px) {
+          right: 10px;
+      }
+    }
+
+    /* triangle top */
+    &:before {
+      position:absolute;
+      top:-9px;
+      right: 15px;
+      display:block;
+      content:'';
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 5.5px 6px 5.5px;
+      border-color: transparent transparent @td_theme_color transparent;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+
+      /* responsive phone */
+      @media (max-width: 767px) {
+        right: auto;
+        left:70px;
+      }
+    }
+
+	#td-header-search {
+		background-color: #FCFCFC !important;
+		width: 95%;
+		height: 23px;
+		margin: 0px;
+	}
+
+	.td-aj-search-results {
+		background-color: #fcfcfc;
+		border-top: 1px solid #f5f5f5;
+		border-bottom: 1px solid #f5f5f5;
+		padding: 10px 0 11px 0;
+
+
+		.td_mod_aj_search {
+			padding: 10px 21px 0px 21px;
+			margin: 1px 0px 0px 0px;
+			min-height: 56px;
+		}
+	}
+
+	.td-search-form {
+		margin: 21px 20px 21px 21px;
+
+      /* responsive phone */
+      @media (max-width: 767px) {
+        margin: 10px 10px 10px 10px;
+      }
+	}
+
+	.result-msg {
+		text-align: center;
+		padding: 5px 0 6px 0;
+		font-family: @font5;
+		font-size: 14px;
+		color: #4d4d4d;
+		font-style: italic;
+
+		a {
+			color: #4d4d4d;
+		}
+	}
+
+	.no-result {
+		background-color: #fcfcfc;
+		border-top: 1px solid #f5f5f5;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	.meta-info {
+		line-height: 14px;
+		top: 2px;
+	}
+
+
+    @media (min-width: 1200px) {
+      left:-@searchDropMenuWidth + @searchButtonWidth;
+    }
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      left:-56px;
+      top:71px;
+      width: 320px;
+    }
+  }
+
+
+
+  .td-aj-cur-element {
+    background-color: #f5f5f5;
+  }
+
+}
+
+
+
+#td-top-search {
+  width: 40px;
+  position: absolute;
+  top:0px;
+  right:16px;
+
+  //z-index: 999;
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    right:48px;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    right:11px;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+    position: relative;
+	top: -55px;
+	right: -56px;
+  }
+
+}
+
+.open > .dropdown-menu {
+  animation-name: slidenavAnimation;
+  animation-duration:.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: slidenavAnimation;
+  -webkit-animation-duration:.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-name: slidenavAnimation;
+  -moz-animation-duration:.2s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: forwards;
+}
+@keyframes slidenavAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.99;
+  }
+}
+@-webkit-keyframes slidenavAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.99;
+  }
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    Mega Menu
+*/
+
+.td-mega-menu {
+  position: static !important;
+
+
+  .sub-menu { /* hover fix */
+    display: none !important;
+  }
+}
+
+/* hover fix */
+.td-mega-menu.sfHover .sub-menu{
+  display: block !important;
+}
+
+
+
+
+
+
+.td-mega-menu ul {
+  position: absolute !important;
+
+  width: 996px !important;
+
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    width: 1115px !important;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    width: 748px !important;
+  }
+
+  height: auto !important;
+  top:0px;
+  left:0px !important;
+  display: none;
+
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    left:27px !important;
+  }
+}
+
+

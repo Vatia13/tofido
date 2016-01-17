@@ -1,0 +1,464 @@
+.iosSlider {
+  width: 100%;
+
+
+
+/* this height ends up being your maximum height,
+ * if you want it to scale forever, set it to
+ * a very high number */
+  height: 1500px;
+}
+
+.iosSlider {
+
+  .slider {
+    width: 100%;
+    height: 100%;
+    .item {
+      float: left;
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  .entry-thumb {
+    height: auto;
+
+  }
+
+  .entry-thumb:hover {
+    opacity: 1 !important;
+  }
+
+  .thumb-wrap {
+    text-align: center;
+
+
+  }
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    custom slide
+*/
+
+
+.iosSlider:hover {
+  .prevButton {
+    opacity: 0.7;
+  }
+
+  .nextButton {
+    opacity: 0.7;
+  }
+}
+
+
+.iosSlider .prevButton {
+  position: absolute;
+
+  .td-sp();
+  .td-sp-slide-arrow-left();
+
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  margin-top: -(@slider_arrow_height / 2);
+
+  opacity: 0;
+  .transition(opacity @td_transition_time);
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.iosSlider .nextButton {
+  position: absolute;
+
+  .td-sp();
+  .td-sp-slide-arrow-right();
+
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  margin-top: -(@slider_arrow_height / 2);
+
+  opacity: 0;
+  .transition(opacity @td_transition_time);
+  &:hover{
+    opacity: 1;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    1 column
+*/
+
+.iosSlider-col-1, .iosSlider-col-1 .item {
+  height: 365px !important;
+
+  .td-sbig-title-wrap a {
+    font-size: 16px !important;
+    line-height: 6px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      font-size: 18px !important;
+      line-height: 14px
+    }
+
+    /* responsive portrait tablet */
+    @media (min-width: 768px) and (max-width: 1018px) {
+      font-size: 12px !important;
+      line-height: 3px
+    }
+    /* responsive phone */
+    @media (max-width: 767px) {
+      font-size: 17px !important;
+      line-height: 12px
+    }
+  }
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    height: 406px !important;
+  }
+
+  /* responsive portrait tablet */
+  @media (min-width: 768px) and (max-width: 1018px) {
+    height: 286px !important;
+  }
+
+  .entry-thumb {
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+
+.iosSlider-col-1 .slide-info-wrap {
+	width: 100%;
+	@media (min-width: 1200px) {
+		width: 100%;
+	}
+	@media (min-width: 768px) and (max-width: 1018px) {
+		width: 100%;
+	}
+	@media (max-width: 767px) {
+		width:100%;
+	}
+}
+
+.iosSlider-col-1 .entry-title a, .iosSlider-col-1  .entry-title {
+	@media (min-width: 768px) and (max-width: 1018px) {
+		font-size:16px !important;
+		line-height:19px !important;
+	}
+	@media (max-width: 767px) {
+		font-size:16px !important;
+		line-height:19px !important;
+	}
+}
+
+.iosSlider-col-1 .entry-author-date {
+	@media (min-width: 768px) and (max-width: 1018px) {
+		display: none;
+	}
+}
+
+.iosSlider-col-1 .entry-review-stars {
+	display: inline-block;
+    position: relative;
+    top: 4px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    2 columns
+*/
+
+
+.iosSlider-col-2, .iosSlider-col-2 .item {
+  height: 317px !important;
+
+  .td-sbig-title-wrap a {
+    font-size: 20px !important;
+    line-height: 15px;
+
+    /* responsive phone */
+    @media (max-width: 767px) {
+      font-size: 15px !important;
+      line-height: 10px
+    }
+  }
+
+  /* responsive monitor */
+  @media (min-width: 1200px) {
+    height: 352px !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1018px) {
+      height: 240px !important;
+  }
+}
+
+.iosSlider-col-2 .slide-info-wrap {
+	@media (max-width: 767px) {
+		width:100%;
+	}
+}
+
+.iosSlider-col-2 .entry-title a, .iosSlider-col-2  .entry-title {
+	@media (max-width: 767px) {
+		font-size:16px !important;
+		line-height:19px !important;
+	}
+}
+
+.iosSlider-col-2 .entry-review-stars {
+	display: inline-block;
+    position: relative;
+    top: 4px;
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    3 columns
+*/
+.iosSlider-col-3, .iosSlider-col-3 .item {
+  height: 433px !important;
+
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+        height: 483px !important;
+    }
+	@media (min-width: 768px) and (max-width: 1018px) {
+		height: 326px !important;
+	}
+	@media (max-width: 767px) {
+		height: 310px !important;
+	}
+}
+
+
+
+
+.iosSlider-col-3 .slide-info-wrap {
+	@media (max-width: 767px) {
+		width:100%;
+	}
+}
+
+.iosSlider-col-3 .entry-title a, .iosSlider-col-3  .entry-title {
+	@media (min-width: 768px) and (max-width: 1018px) {
+		font-size:16px !important;
+		line-height:19px !important;
+	}
+	@media (max-width: 767px) {
+		font-size:16px !important;
+		line-height:19px !important;
+	}
+}
+
+
+
+/*  ----------------------------------------------------------------------------
+    slide on mobile
+*/
+
+//1 cols
+
+.iosSlider-col-1, .iosSlider-col-1 .item {
+  @media (max-width: 340px) {
+    height: 290px !important;
+  }
+}
+
+
+/* two cols */
+
+.iosSlider-col-2, .iosSlider-col-2 .item {
+  @media (max-width: 650px) {
+    height: 250px !important;
+  }
+
+  @media (max-width: 520px) {
+    height: 200px !important;
+  }
+
+  @media (max-width: 420px) {
+    height: 150px !important;
+  }
+
+  @media (max-width: 340px) {
+    height: 155px !important;
+
+  }
+
+
+
+}
+
+//3 cols
+.iosSlider-col-3, .iosSlider-col-3 .item {
+  @media (max-width: 740px) {
+    height: 277px !important;
+  }
+
+  @media (max-width: 650px) {
+    height: 232px !important;
+  }
+
+  @media (max-width: 550px) {
+    height: 185px !important;
+  }
+
+  @media (max-width: 450px) {
+    height: 165px !important;
+  }
+
+  @media (max-width: 400px) {
+    height: 135px !important;
+  }
+
+  @media (max-width: 340px) {
+    height: 135px !important;
+  }
+}
+
+.iosSlider-col-3 .entry-review-stars {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+
+
+.slide-info-wrap {
+  position: absolute;
+  left:0px;
+  bottom: -110px;
+  width: 326px;
+  color:white;
+
+  opacity: 0;
+  .transition(all 0.3s);
+}
+
+.slide-wrap-active {
+  opacity: 1;
+  bottom :24px;
+  @media (max-width: 600px) {
+    bottom :0px;
+  }
+
+  .transition(all 0.3s);
+
+}
+
+.slide-wrap-active-first {
+
+}
+
+
+.iosSlider {
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .slide-title {
+	padding: 4px 10px 5px 9px;
+  }
+
+  .slide-line {
+    /* using data-uri for transparent background */
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU1QzIzNzdCNkU5MTFFMjgyMDY4NTFBQkY5Q0Q1RjAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU1QzIzNzhCNkU5MTFFMjgyMDY4NTFBQkY5Q0Q1RjAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NTVDMjM3NUI2RTkxMUUyODIwNjg1MUFCRjlDRDVGMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NTVDMjM3NkI2RTkxMUUyODIwNjg1MUFCRjlDRDVGMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoAQD2sAAAAPSURBVHjaYlBUVPwKEGAAAiMBWb6+NxsAAAAASUVORK5CYII=') repeat;
+    height: 3px;
+  }
+
+  .slide-meta {
+    position: absolute;
+    font-family: @font2;
+    font-size: 12px;
+    color: white;
+    top: 12px;
+
+    @media (max-width: 600px) {
+      display:none;
+    }
+  }
+
+  .slide-meta-cat {
+    display: inline-block ;
+    background-color: @td_theme_color;
+    line-height: 28px;
+    padding: 0 10px 0 10px;
+    height: 29px;
+
+    a {
+      font-family: @font5;
+      font-size: 12px;
+      color: white;
+    }
+  }
+
+  .slide-meta-author {
+    display: inline-block ;
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 28px;
+    padding: 0 10px 0 10px;
+    height: 29px;
+    a {
+      color: white;
+    }
+  }
+
+  .entry-title a,
+  .entry-title {
+    font-size:20px;
+    line-height:24px;
+    color:white !important;
+  }
+
+  .entry-category a {
+    color:white !important;
+  }
+}
+
+//980 no responsive
+.td_980_not_resp {
+  .iosSlider-col-1, .iosSlider-col-1 .item {
+    height: 365px !important;
+  }
+  .iosSlider-col-2, .iosSlider-col-2 .item {
+    height: 317px !important;
+  }
+}
+
+.td_980_resp {
+  @media (min-width: 1200px) {
+    .iosSlider-col-2, .iosSlider-col-2 .item {
+      height: 321px !important;
+    }
+  }
+  .iosSlider-col-1, .iosSlider-col-1 .item {
+    height: 365px !important;
+
+    @media (min-width: 1200px) {
+      height: 365px !important;
+    }
+
+    @media (min-width: 768px) and (max-width: 1018px) {
+      height: 274px !important;
+    }
+  }
+}
+

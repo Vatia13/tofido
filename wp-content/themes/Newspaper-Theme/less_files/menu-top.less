@@ -1,0 +1,140 @@
+/*  ----------------------------------------------------------------------------
+    header menu
+*/
+
+.td-full-layout .td-header-menu-wrap,
+.td-boxed-layout .td-header-menu-wrap .container
+{
+  background-color: #2b2b2b;
+  padding: 2px 0 4px 0px;
+}
+
+.td-header-menu-wrap {
+
+
+  font-family: @font3;
+  font-size:12px;
+
+  color:#dddddd;
+
+
+  .container {
+    //height: 30px;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: none;
+  }
+}
+
+.td-header-menu-wrap .menu-post-and-page-settings-container .menu {
+  margin: 0px 0px 0px 0px !important;
+  text-align: right;
+
+  @media (min-width: 1200px) {
+    margin: 0px 33px 0px 0px !important;
+  }
+
+
+}
+
+.top-header-menu, .td-header-menu-wrap .menu-post-and-page-settings-container .menu {
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0px 0px 25px;
+
+  @media (min-width: 1200px) {
+    margin: 0px 0px 0px 49px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1018px) {
+		margin: 0px 0px 0px 22px;
+	}
+
+
+  li {
+    display: inline-block;
+    position: relative;
+    zoom: 1;
+
+    a {
+      color:#dddddd;
+      padding: 0px 15px 0px 15px;
+    }
+
+
+
+    a:before {
+      position:absolute;
+      top:10px;
+      left:-1px;
+
+      display:block;
+      content:'';
+      height:7px;
+      width:1px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background-color: #7d7d7d;
+    }
+
+
+  }
+
+  li:first-child {
+    a {
+      padding-left:0px;
+    }
+
+    a:before {
+      display: none;
+    }
+  }
+}
+
+.td-header-menu-wrap {
+  .menu-top-container {
+    display: inline-block !important;
+  }
+  .td_data_time {
+    display: inline-block;
+    margin: 0px 0px 0px 25px;
+
+    @media (min-width: 1200px) {
+      margin: 0px 0px 0px 49px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1018px) {
+      margin: 0px 0px 0px 22px;
+    }
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    social widget top
+*/
+
+.td-header-menu-wrap {
+  .td_mod_wrap {
+    text-align: right !important;
+  }
+
+  .td-social-wrap {
+    padding-bottom: 0px !important;
+    text-align: right !important;
+    margin-right: 15px;
+
+    /* responsive monitor */
+    @media (min-width: 1200px) {
+      margin-right: 48px;
+    }
+  }
+  .td-social-icon-wrap {
+
+    margin: 0px 0px 0px 14px;
+    position: relative;
+    top:5px;
+  }
+}

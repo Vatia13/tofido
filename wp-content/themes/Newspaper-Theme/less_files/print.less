@@ -1,0 +1,36 @@
+/*  ----------------------------------------------------------------------------
+    css for printing
+*/
+
+@media print {
+
+  /*  ----------------------------------------------------------------------------
+    css for post page printing
+  */
+  .single-post {
+    #td-theme-settings,
+    .entry-comments-views,
+    .td-header-menu-wrap,
+    .td-menu-placeholder,
+    .entry-crumbs,
+    .td-social-sharing,
+    .td-social-like-tweet,
+    .next-prev,
+    .similar-articles,
+    .column_container.td-post-sidebar,
+    #comments,
+    .td-footer-wrap,
+    .td-sub-footer-menu,
+    .td-more-articles-box {
+      display:none;
+    }
+
+    .column_container.td-post-content {
+      width:100%;
+    }
+
+    a[href]:after {
+      content: "" !important;
+    }
+  }
+}

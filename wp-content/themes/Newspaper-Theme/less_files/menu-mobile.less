@@ -1,0 +1,255 @@
+/* custom stuff */
+
+
+@td_mobile_nav_shadow:inset -3px 0px 17px 0px rgba( 0, 0, 0, 0.15 );
+
+
+
+
+
+
+
+/* toggle button */
+#td-top-mobile-toggle {
+  display: none;
+  top:0px;
+  left: 0px;
+
+  li:before {
+    display: none;
+  }
+
+  /* responsive phone */
+  @media (max-width: 767px) {
+      display: block;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+
+
+/* hide mobile nav */
+#td-mobile-nav {
+  display: none;
+}
+
+
+
+/* the wraps  */
+#outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/*  ----------------------------------------------------------------------------
+    mobile menu style
+*/
+
+/* close */
+.td-mobile-close {
+  position: relative;
+
+  a {
+    display: block;
+    width: 100%;
+    padding: 15px 0px 17px 0px;
+    text-align: center;
+    background-color: @td_theme_color;
+    color:white;
+    font-size: 17px;
+    font-family: @font4;
+    z-index: -1;
+    .box-shadow(@td_mobile_nav_shadow);
+
+
+    &:hover {
+      text-decoration: none !important;
+	  color: white;
+	  opacity: 0.8;
+    }
+  }
+
+  .td-nav-triangle {
+    position: absolute;
+    right: 0px;
+    top:19px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 7.5px 8px 7.5px 0;
+    border-color: transparent #ffffff transparent transparent;
+  }
+
+}
+
+/* menu content */
+.td-mobile-content {
+
+  ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+  }
+  li {
+    float:none;
+	a {
+		display: block;
+		border-top: 1px solid white;
+		border-bottom: 1px solid #e8e8e8;
+		line-height: 21px;
+		font-size: 15px;
+		font-family: @font2;
+		text-transform: uppercase;
+		color: #1e1e1e;
+		padding: 12px 13px 14px 17px;
+
+
+		&:hover {
+		  text-decoration: none !important;
+		  color: @td_theme_color;
+		  background-color: #fafafa;
+		}
+
+		/* responsive phone */
+		@media (max-width: 767px) {
+			padding: 12px 13px 14px 17px !important;
+		}
+	}
+  }
+
+  .current-menu-item > a {
+	color: @td_theme_color !important;
+	background-color: #fafafa;
+  }
+
+
+  /* first submenu */
+  .sub-menu {
+	a {
+		padding: 7px 8px 9px 36px !important;
+		line-height: 19px;
+		font-size: 13px;
+	}
+
+    /* 2nd level submenu */
+    .sub-menu {
+      a {
+        padding-left: 55px !important;
+      }
+
+      /* 3rd level submenu */
+      .sub-menu {
+        a {
+          padding-left: 74px !important;
+        }
+      }
+    }
+  }
+
+
+
+  /* hide the icons */
+  .menu_icon {
+    display: none;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+
+//@media screen and (max-width: 2000px) {
+
+
+
+
+  /* reposition the main menu */
+  #td-mobile-nav {
+    position: absolute;
+    //display: none;
+    top: 0;
+
+    overflow: hidden;
+    color:white !important;
+    display: block;
+  }
+
+
+  #td-mobile-nav:not(:target) {
+    z-index: 1;
+    height: 0;
+  }
+
+
+  .js-ready #td-mobile-nav {
+    height: 100%;
+    width: 70%;
+    background: #f5f5f5;
+    //.box-shadow(@td_mobile_nav_shadow);
+
+
+  }
+
+
+
+  .js-ready #td-mobile-nav {
+    left: -70%;
+  }
+  .js-ready #inner-wrap {
+    left: 0;
+  }
+
+  .js-nav #inner-wrap {
+    left: 70%;
+  }
+
+
+
+  .csstransforms3d.csstransitions.js-ready #td-mobile-nav {
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .csstransforms3d.csstransitions.js-ready #inner-wrap {
+    left: 0 !important;
+
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+
+
+
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  .csstransforms3d.csstransitions.js-nav #inner-wrap {
+    -webkit-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+    -moz-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+    -ms-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+    -o-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+    transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+  }
+
+
+
+}

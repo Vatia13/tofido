@@ -1,0 +1,26 @@
+/**
+ * styles settings page
+ */
+.pgntn_input {
+	display: inline-block;
+}
+.pgntn-empty-position {
+	clear: left;
+}
+.pgntn_color_picker {
+	z-index: 100; 
+	background: #eee; 
+	border: 1px solid #ccc; 
+	position: absolute; 
+	display: none;
+}
+@media only screen and ( max-width: 320px ) {
+	#pgntn_settings_page code {
+		display: block;
+		width: 200px;
+	}
+	.pgntn_input {
+		display: block;
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,86 @@
+.mx_image_background {
+  background-color: #f2f2f2;
+}
+
+
+.td-visibility-hidden { //used to hide date from tc
+  visibility: hidden;
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------
+    from bootstrap
+*/
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+
+.transform(@string){
+  transform: @string;
+    -webkit-transform: @string;
+  -moz-transform: 	 @string;
+  -ms-transform: 		 @string;
+  -o-transform: 		 @string;
+}
+
+
+
+
+
+
+
+.toRGBA( @color, @alpha) {
+  color: rgba(red(@color), green(@color), blue(@color), @alpha)
+}
+
+
+
+.td-dispaly-none {
+  display: none;
+}
+
+.td-dispaly-block{
+  display: block;
+}

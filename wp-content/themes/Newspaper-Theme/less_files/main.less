@@ -1,0 +1,152 @@
+/*
+Theme Name: 	Newspaper
+Theme URI: 		http://themeforest.net/user/tagDiv/portfolio
+Description: 	Premium wordpress template, clean and easy to use.
+Version: 		__td_deploy_version__
+Author: 		tagDiv
+Author URI: 	http://themeforest.net/user/tagDiv/portfolio
+License:
+License URI:
+Tags:black, white, one-column, two-columns, fixed-width
+*/
+
+//@import "../external/bootstrap-master/less/bootstrap.less";
+//@import "../external/bootstrap-master/less/responsive.less";
+
+/*
+
+ _ _
+| \ | ___  _ _ _  ___ ___  ___  ___  ___  _ _
+|   |/ ._>| | | |<_-<| . \<_> || . \/ ._>| '_>
+|_\_|\___.|__/_/ /__/|  _/<___||  _/\___.|_|
+                     |_|       |_|
+  ~ tagDiv 2014 ~
+
+  Thanks for using our theme !
+  Our portfolio is here: http://themeforest.net/user/tagDiv/portfolio
+
+*/
+
+
+body {
+  display: block;
+  visibility: visible;
+}
+
+
+
+
+
+@import "variables.less";
+
+
+
+@import "page.less";
+@import "header.less";
+
+
+
+//menus
+@import "menu-top.less";
+@import "menu-header.less";
+@import "menu-mobile.less";
+
+@import "type.less";
+@import "post.less";
+@import "editor-style.less";
+
+@import "post-templates.less";
+@import "sprite.less";
+
+
+//waiting loading box
+@import "td_loading_box.less";
+
+
+//pagebuilder
+
+@import "pagebuilder/modules.less";
+@import "pagebuilder/blocks.less";
+@import "pagebuilder/td_slide.less";
+@import "pagebuilder/td_slide_big.less";
+@import "pagebuilder/td_gallery.less";
+@import "pagebuilder/td_ads.less";
+@import "pagebuilder/td_social.less";
+@import "pagebuilder/td_text_with_title.less";
+@import "pagebuilder/td_definition_list.less";
+@import "pagebuilder/included/alerts.less";
+@import "pagebuilder/included/accordion.less";
+@import "pagebuilder/included/button.less";
+@import "pagebuilder/included/message_box.less";
+@import "pagebuilder/included/separator.less";
+@import "pagebuilder/included/tabs.less";
+@import "pagebuilder/included/tour_section.less";
+@import "pagebuilder/included/video_player.less";
+@import "pagebuilder/included/contact_form.less";
+@import "pagebuilder/included/faq.less";
+@import "pagebuilder/included/map.less";
+@import "pagebuilder/included/default.less";
+@import "pagebuilder/td_authors.less";
+@import "pagebuilder/td_revolution_slider.less";
+@import "pagebuilder/td_big_grid.less";
+
+//widgets
+@import "widgets/wp-widgets.less";
+@import "widgets/td_tab.less";
+@import "widgets/socialbox.less";
+@import "widgets/popular-posts-bars.less";
+
+
+//misc
+@import "forms.less";
+@import "comments.less";
+@import "font-icons.less";
+@import "magnific-popup.less";
+@import "stacks.less";
+
+//plugins
+@import "plugins/social-counter.less";
+@import "plugins/buddypress.less";
+@import "plugins/woocommerce.less";
+@import "plugins/bbpress.less";
+
+@import "review.less";
+@import "footer.less";
+@import "galleries.less";
+@import "totop.less";
+@import "colorbox.less";
+@import "style_customizer.less";
+@import "modal-window.less";
+
+@import "retina.less";
+
+@import "mixin.less";
+@import "shortcodes_other.less";
+
+@import "gallery-slider.less";
+
+@import "ie.less";
+
+@import "responsive.less";
+
+
+@import "pagebuilder/included_front_css_incomplete/page_builder_front.less";
+
+//grid fix - change in px
+.column_container .span6 {
+  @media (min-width: 1200px) {
+    width: 46.57142857142857%;
+    margin-left: 6.857142857142857%;
+  }
+}
+
+//more stories box
+@import "more-stories.less";
+
+//timeline template
+@import "timeline.less";
+
+
+@import "animations_compact.less";
+
+@import "print.less";
