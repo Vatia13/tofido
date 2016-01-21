@@ -843,12 +843,13 @@ function wp_link_pages_args_prevnext_add($args)
     global $page, $numpages, $more, $pagenow;
 
     $args['separator'] = ' <span> '.$page.' of '.$numpages.'</span>';
-    $args['link_before'] ='';
-    $args['link_after'] = '';
     $args['nextpagelink'] =  __( 'NEXT' );
     $args['previouspagelink'] =  __( 'PREVIOUS' );
+    $args['link_before'] = '';
+    $args['link_after'] = '';
     $args['next_or_number'] = 'next';
-    $args['before'] = '<div class="page-nav page-nav-post"><center>';
+    $first_page = ($page == 1) ? '<span>1 of '.$numpages.'</span>' : '';
+    $args['before'] = '<div class="page-nav page-nav-post"><center>'.$first_page;
     $args['after'] = '</center></div>';
 //    if (!$args['next_or_number'] == 'next_and_number')
 //        return $args; # exit early
