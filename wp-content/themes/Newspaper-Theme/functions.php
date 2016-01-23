@@ -849,8 +849,9 @@ function wp_link_pages_args_prevnext_add($args)
     $args['link_after'] = '';
     $args['next_or_number'] = 'next';
     $first_page = ($page == 1) ? '<span>1 of '.$numpages.'</span>' : '';
+    $last_page = ($page == $numpages) ? '<span>'.$page.' of '.$numpages.'</span>' : '';
     $args['before'] = '<div class="page-nav page-nav-post"><center>'.$first_page;
-    $args['after'] = '</center></div>';
+    $args['after'] = $last_page.'</center></div>';
 //    if (!$args['next_or_number'] == 'next_and_number')
 //        return $args; # exit early
 //
